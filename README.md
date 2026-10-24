@@ -1,4 +1,4 @@
-# Manna Foods Web App
+# PDX Food Rescue Web App
 
 ![](images/mannafoods.jpg)
 
@@ -28,7 +28,7 @@ This SPA [single page application] is a React / Flask app that allows businesses
 
 ![](images/updatelocation.gif)
 
-1. Before you begin using Manna Foods, be sure to update your location.
+1. Before you begin using PDX Food Rescue, be sure to update your location.
 2. Navigate to the Account tab and simply enter your new location. This can be in the form of an address, zipcode, city, etc.
 3. Saving one's location allows users to browse listings by distance.
 4. This also allows businesses to set a default pickup location for all future listings.
@@ -72,9 +72,3 @@ This SPA [single page application] is a React / Flask app that allows businesses
 ## Credits
 
 Code written, tested, and submitted by Joseph Lee.
-
-Github: https://github.com/joeylee08
-
-Codepen: https://codepen.io/joeylee08
-
-LinkedIn: https://www.linkedin.com/in/joeylee08/
