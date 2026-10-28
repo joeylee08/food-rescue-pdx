@@ -6,7 +6,6 @@ import UserInfo from './UserInfo'
 
 const Home = () => {
   const { loginType, currentUser } = useContext(UserContext)
-  const title = loginType === 'user' ? 'Manna Foods Home' : 'Manna Foods Business Home'
 
   const [quote, setQuote] = useState('')
   const [author, setAuthor] = useState('')
@@ -24,10 +23,10 @@ const Home = () => {
 
   return (
     <div className='container'>
-      <Header title={title}/>
+      <Header title={'Food Rescue PDX'}/>
       <NavBar/>
-      <UserInfo />
-      <img className='homeImage' src='https://github.com/joeylee08/mannafoods/blob/main/images/athens.jpg?raw=true' alt='homepage_image'></img>
+      {currentUser && <UserInfo />}
+      <img className='homeImage' src='' alt='homepage_image'></img>
       <div className='homeQuotes'>
         <h2 className='quote'>{quote}</h2>
         <h3 className='author'>{author}</h3>

@@ -19,9 +19,6 @@ load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 app.secret_key = SECRET_KEY
 
-DATABASE_URI = os.getenv('DATABASE_URI')
-app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI
-
 @app.route('/')
 @app.route('/login')
 @app.route('/mylistings')

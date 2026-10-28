@@ -24,7 +24,12 @@ class User(db.Model, SerializerMixin):
     listings = association_proxy('user_listings', 'listing')
 
     # SERIALIZATION
-    serialize_rules = ('-user_listings.user', '-listings.users')
+    serialize_rules = (
+			'-_password_hash',
+			'-password_hash',
+			'-user_listings.user',
+			'-listings.users'
+		)
 
     # PASSWORD HASHING
     @hybrid_property
@@ -117,7 +122,13 @@ class Listing(db.Model, SerializerMixin):
     users = association_proxy('user_listings', 'user')
 
     # SERIALIZATION
-    serialize_rules = ('-user_listings.listing', '-business.listings', '-users.listings')
+    serialize_rules = (
+			'-user_listings',
+			'-users',
+			'-business.listings',
+			'-business._password_hash',
+			'-business.password_hash'
+		)
 
     # must exist and be a string
     @validates('product')
@@ -176,7 +187,11 @@ class Business(db.Model, SerializerMixin):
     listings = db.relationship('Listing', back_populates='business', cascade='all, delete-orphan')
 
     # SERIALIZATION
-    serialize_rules = ('-listings.business',)
+    serialize_rules = (
+			'-_password_hash',
+			'-password_hash',
+			'-listings.business'
+		)
 
     # PASSWORD HASHING
     @hybrid_property

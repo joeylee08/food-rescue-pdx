@@ -3,8 +3,10 @@ import { useState, useEffect, createContext } from 'react'
 export const UserContext = createContext()
 
 const UserProvider = ({children}) => {
-  const [currentUser, setCurrentUser] = useState({})
-  const [loginType, setLoginType] = useState('')
+  const [currentUser, setCurrentUser] = useState(null)
+  const [loginType, setLoginType] = useState(null)
+	const [isAuthLoading, setIsAuthLoading] = useState(true)
+
   const [isSnack, setIsSnack] = useState(false)
   const [snackText, setSnackText] = useState('')
 
@@ -22,11 +24,22 @@ const UserProvider = ({children}) => {
   useEffect(() => {
     // check for currentUser
     fetch('/currentuser')
-      .then(res => res.json())
+      .then(res => {
+				if (!res.ok) return null
+				return res.json()
+			})
       .then(user => {
         setCurrentUser(user)
-        setLoginType(user['login_type'])
+        setLoginType(user?.login_type ?? null)
       })
+			.catch(error => {
+				console.error('Session check failed:', error)
+				setCurrentUser(null)
+				setLoginType(null)
+			})
+			.finally(() => {
+				setIsAuthLoading(false)
+			})
   }, [])
 
   const handleSetUser = (userObj) => {
@@ -38,7 +51,7 @@ const UserProvider = ({children}) => {
   }
 
   return (
-    <UserContext.Provider value={{currentUser, loginType, handleSetUser, handleSetLogin, isSnack, snackText, handleOpenSnack, handleCloseSnack}}>
+    <UserContext.Provider value={{currentUser, loginType, isAuthLoading, handleSetUser, handleSetLogin, isSnack, snackText, handleOpenSnack, handleCloseSnack}}>
       {children}
     </UserContext.Provider>
   )

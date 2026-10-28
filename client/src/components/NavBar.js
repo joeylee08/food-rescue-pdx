@@ -5,7 +5,19 @@ import { useContext } from 'react'
 const NavBar = () => {
   const {loginType} = useContext(UserContext)
   
-  if (loginType == 'user') {
+
+	if (loginType === null) {
+		return (
+			<nav className='navbar'>
+        <ul className='linksList'>
+          <li><NavLink to='/'>Home</NavLink></li>
+          <li><NavLink to='/findlisting'>Find Listing</NavLink></li>
+          <li><NavLink to='/login'>Login</NavLink></li>
+        </ul>
+      </nav>
+		)
+	}
+  else if (loginType === 'user') {
     return (
       <nav className='navbar'>
         <ul className='linksList'>
@@ -16,7 +28,7 @@ const NavBar = () => {
         </ul>
       </nav>
     )
-  } else if (loginType == 'business') {
+  } else if (loginType === 'business') {
     return (
       <nav className='navbar'>
         <ul className='linksList'>

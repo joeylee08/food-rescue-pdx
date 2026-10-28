@@ -8,6 +8,7 @@ from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData
 from flask_bcrypt import Bcrypt
+import os
 
 # Local imports
 
@@ -19,7 +20,7 @@ app = Flask(
     template_folder='../client/build'
 )
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://admin:uFEzrSvbxtb65RLAARxsMSInkLeC23St@dpg-cmagain109ks73fe1vbg-a.oregon-postgres.render.com/mannafoods'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///food_rescue_pdx'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.json.compact = False
 
@@ -29,6 +30,7 @@ metadata = MetaData(naming_convention={
 })
 db = SQLAlchemy(metadata=metadata)
 migrate = Migrate(app, db)
+print('DATABASE URI:', repr(app.config.get('SQLALCHEMY_DATABASE_URI')))
 db.init_app(app)
 
 # Instantiate REST API
