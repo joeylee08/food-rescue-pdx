@@ -1,27 +1,11 @@
-import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react'
-import { UserContext } from '../context/UserContext'
 
-const Header = ({ title }) => {
-  const navigate = useNavigate()
+const Header = () => {
 
-  const {handleSetUser, handleSetLogin} = useContext(UserContext)
-
-  const logout = () => {
-    fetch('/logout')
-      .then(() => {
-        handleSetUser({})
-        handleSetLogin('')
-        navigate('/')
-      })
-  }
-  
   return (
-    <>
-      <h1 className='header'>{title}
-        <button id='logoutBtn' onClick={logout}>LOGOUT</button>
-      </h1>
-    </>
+    <div className='header'>
+      <h3 className='headerText'>Food Rescue PDX</h3>
+			<p>Good food deserves a second chance.</p>
+    </div>
   )
 }
 

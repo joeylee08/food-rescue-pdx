@@ -1,8 +1,82 @@
+/* 
+off white: #fcfcfc;
+soft orange: #FFF0E5;
+deep orange: #D95A1B;
+light gray: #E8E8E8;
+muted gray: #777777;
+black: #171717;
+*/
+
+* {
+	font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
 body {
-  background-color: #f4f4f4;
+  background-color: #E8E8E8;
   margin-bottom: 2rem;
+	width: 100%;
+	margin: 0;
+}
+.header {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	height: auto;
+	background-color: #fcfcfc;
+	color: white;
+	padding: 2rem;
+}
+.header > h3 {
+	font-size: 6rem;
+	margin: 0;
+	color: #171717;
+}
+.header > p {
+	font-size: 2rem;
+	margin: 0;
+	color: #D95A1B;
+}
+.navbar {
+  margin: 0px;
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  padding-bottom: 0.2rem;
+}
+.linksList {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 3rem;
+  list-style-type: none;
+  font-size: 1.5rem;
+	font-weight: 500;
+}
+a {
+  color: #171717;
+  text-decoration: none;
 }
 
+a:hover {
+  color: red;
+}
+.mainPage .child1 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.searchBar {
+	width: 80%;
+	height: 5rem;
+	border: 2px solid red;
+}
+.googleMap {
+	height: auto;
+	border: 2px solid red;
+	width: 80%;
+}
 .snackbar {
   position: fixed;
   display: flex;
@@ -112,8 +186,6 @@ h1.formTitle {
   font-family: math, fantasy;
   font-size: 1rem;
 }
-
-
 .loginInputTextarea {
   width: 480px;
   height: 5.2rem;
@@ -158,49 +230,6 @@ h1.formTitle {
   background-color: #f4f4f4;
   padding: 2rem 1rem 2rem 1rem;
   height: auto;
-}
-
-.header {
-  font-family: fantasy, math;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 0px;
-  width: 100%;
-  height: 120px;
-  background-color: #435334;
-  text-align: center;
-  padding-top: 2.5rem;
-  padding-bottom: 1.2rem;
-  font-size: 3rem;
-  color: #ffffff;
-}
-
-.navbar {
-  margin: 0px;
-  width: 100%;
-  height: 70px;
-  background-color: #596a48;
-  font-family: fantasy, math;
-  padding-bottom: 0.2rem;
-}
-
-.linksList {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 3rem;
-  list-style-type: none;
-  font-size: 1.4rem;
-}
-
-a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-a:hover {
-  color: red;
 }
 
 #logoutBtn {
@@ -421,28 +450,6 @@ div.listingCard h4 {
   height: 200px;
   margin: 0px;
 }
-
-.homeQuotes {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 200px;
-  margin: 0px;
-}
-
-.homeQuotes h2 {
-  font-family: fantasy, math;
-  color: #435334;
-}
-
-.homeQuotes h3 {
-  font-family: fantasy, math;
-  color: #435334;
-}
-
 .homeDetails h1 {
   font-family: fantasy, math;
   font-size: 2.3rem;

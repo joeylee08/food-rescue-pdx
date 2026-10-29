@@ -22,16 +22,20 @@ const Home = () => {
   }, [])
 
   return (
-    <div className='container'>
+    <>
       <Header title={'Food Rescue PDX'}/>
-      <NavBar/>
+      {/* <NavBar/> */}
       {currentUser && <UserInfo />}
-      <img className='homeImage' src='' alt='homepage_image'></img>
-      <div className='homeQuotes'>
-        <h2 className='quote'>{quote}</h2>
-        <h3 className='author'>{author}</h3>
-      </div>
-    </div>
+			<div className='mainPage home'>
+				<div className='child child1'>
+					<div className='searchBar'>
+						<input className='searchQuery'></input>
+						<button className='searchGo'></button>
+					</div>
+					<img className='googleMap' src="/map_placeholder.png" alt="Map of Portland" />
+				</div>
+			</div>
+    </>
   )
 }
 
