@@ -125,7 +125,7 @@ class Listings(Resource):
     def get(self):
         try:
             all_listings = [listing.to_dict() for listing in Listing.query]
-            all_listings.sort(key=lambda item: datetime.strptime(item['created_at'], '%Y-%m-%d %H:%M:%S').timestamp() , reverse=True)
+            all_listings.sort(key=lambda item: datetime.fromisoformat(item['created_at']), reverse=True)
 
             return make_response(all_listings, 200)
         except Exception:

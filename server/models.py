@@ -24,22 +24,22 @@ class User(db.Model, SerializerMixin):
     listings = association_proxy('user_listings', 'listing')
 
     # SERIALIZATION
-    serialize_rules = (
-			'-_password_hash',
-			'-password_hash',
-			'-user_listings.user',
-			'-listings.users'
+    serialize_only = (
+			'id',
+            'login_type',
+			'username',
+			'location',
+			'created_at'
 		)
 
     # PASSWORD HASHING
-    @hybrid_property
+    @property
     def password_hash(self):
-        return self._password_hash
-    
+         raise AttributeError('Password hash is not readable')
+
     @password_hash.setter
     def password_hash(self, password):
-        password_hash = bcrypt.generate_password_hash(password).decode('utf-8')
-        self._password_hash = password_hash
+        self._password_hash = bcrypt.generate_password_hash(password).decode('utf-8')
 
     def authenticate(self, password):
         return bcrypt.check_password_hash(self._password_hash, password)
@@ -125,10 +125,30 @@ class Listing(db.Model, SerializerMixin):
     serialize_rules = (
 			'-user_listings',
 			'-users',
+            '-posted_by',
 			'-business.listings',
 			'-business._password_hash',
-			'-business.password_hash'
+			'-business.password_hash',
+            '-business.login_type',
 		)
+
+    def to_public_dict(self):
+        return {
+			'id': self.id,
+			'product': self.product,
+			'quantity': self.quantity,
+			'business_id': self.business_id,
+			'business_name': self.business.business_name,
+			'location': self.location,
+			'expiration_date': self.expiration_date,
+			'notes': self.notes,
+			'vegan_safe': self.vegan_safe,
+			'non_dairy': self.non_dairy,
+			'gluten_free': self.gluten_free,
+			'nut_free': self.nut_free,
+			'soy_free': self.soy_free,
+			'created_at': self.created_at.isoformat() if self.created_at else None
+		}
 
     # must exist and be a string
     @validates('product')
@@ -187,10 +207,13 @@ class Business(db.Model, SerializerMixin):
     listings = db.relationship('Listing', back_populates='business', cascade='all, delete-orphan')
 
     # SERIALIZATION
-    serialize_rules = (
-			'-_password_hash',
-			'-password_hash',
-			'-listings.business'
+    serialize_only = (
+			'id',
+            'login_type',
+			'username',
+			'business_name',
+            'location',
+            'created_at'
 		)
 
     # PASSWORD HASHING
