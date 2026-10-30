@@ -71,37 +71,73 @@ a:hover {
   color: red;
 }
 .home .child1 {
-	width: 80%;
+	width: 95%;
+	height: 40rem;
 	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	display: grid;
+	grid-template-columns: 3fr 5fr;
 	margin-top: 2rem;
 	border: 0.05rem solid #bbbbbb;
 	border-radius: 0.8rem;
+	box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.10);
 }
-.searchBarBox {
+.home .child1a {
+	display: flex;
+	flex-direction: column;
+	min-height: 0;
+	border-radius: 0.8rem 0 0 0.8rem;
+	padding: 0.8rem 0.6rem;
+	background-color: white;
+	box-shadow: 0.2rem 0 0.4rem -0.2rem rgba(0, 0, 0, 0.15);
+	position: relative;
+	z-index: 1;
+}
+.mapListings {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	overflow: scroll;
+	margin: 0;
+	height: 100%;
 	width: 100%;
-	height: 5rem;
-	background-color: #FFA766;
+	border: none;
+	padding: 0.1rem;
+}
+.mapListings::-webkit-scrollbar {
+	width: 0.4rem;
+}
+.mapListings::-webkit-scrollbar-track {
+	background: transparent;
+}
+.mapListings::-webkit-scrollbar-thumb {
+	background: #aaa;
+	border-radius: 0.8rem;
+}
+.mapListings::-webkit-scrollbar-thumb:hover {
+	background: #777;
+}
+.searchBar {
+	width: 98%;
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
 	align-items: center;
-	gap: 1rem;
-	border-radius: 0.8rem 0.8rem 0 0;
+	justify-content: center;
+	border-radius: 0.8rem;
+	border: 0.08rem solid #BBBBBB;
+	gap: 0.5rem;
+	padding: 0.5rem;
+	margin-bottom: 0.9rem;
+}
+.searchIcon {
+	color: #ff8a3d;
+	flex-shrink: 0;
 }
 .searchQuery {
-	width: 18rem;
-	height: 1.8rem;
-	border-radius: 0.3rem;
-	border: 0.08rem solid #BBBBBB;
-	font-size: 1.2rem;
-	padding-left: 0.4rem;
-}
-.searchQuery:focus {
+	width: 100%;
+	height: auto;
+	font-size: 1rem;
+	border: none;
 	outline: none;
-	border: 0.08rem solid green;
 }
 .searchGo {
 	height: 2rem;
@@ -119,25 +155,20 @@ a:hover {
 	color: green;
 }
 .googleMap {
-	height: auto;
 	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 1rem;
 	border-radius: 0 0 0.8rem 0.8rem;
-}
-.home .child2 {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	width: 90%;
-	margin: 0 auto;
-	margin-top: 2rem;
-	gap: 0.5rem;
+	object-fit: cover;
 }
 .listingCard {
 	display: flex;
-	width: 100%;
+	width: 98%;
 	height: 3.5rem;
 	border: 0.05rem solid #bbbbbb;
 	border-radius: 0.5rem;
-	background-color: #fcfcfc;
+	background-color: white;
 	padding: 0.5rem 1rem;
 	transition: box-shadow 0.5s ease, border-color 0.5s ease;
 }
@@ -148,12 +179,15 @@ a:hover {
 }
 .itemAndQty > p {
 	margin: 0;
+	font-size: 0.8rem;
 }
 .productName {
+	font-size: 0.8rem;
 	font-weight: 550;
 	color: green;
 }
 .nameAndLocation {
+	font-size: 0.8rem;
 	margin-left: auto;
 	text-align: right;
 }

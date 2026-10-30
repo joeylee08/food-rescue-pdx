@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../context/UserContext'
 import UserInfo from './UserInfo'
 import ListingCard from './ListingCard'
+import { Search } from "lucide-react";
 
 const Home = () => {
   const { loginType, currentUser } = useContext(UserContext)
@@ -34,14 +35,21 @@ const Home = () => {
       {currentUser && <UserInfo />}
 			<div className='mainPage home'>
 				<div className='child child1'>
-					<div className='searchBarBox'>
-						<input className='searchQuery' placeholder='What are you looking for?'></input>
-						<button className='searchGo'>➜</button>
+					<div className='child child1a'>
+						<div className='searchBar'>
+							<Search className='searchIcon'/>
+							<input className='searchQuery' placeholder='What are you looking for?'></input>
+						</div>
+						<div className='mapListings'>
+							{renderedListings}
+						</div>
 					</div>
-					<img className='googleMap' src="/map_placeholder.png" alt="Map of Portland" />
+					<div className='child child1b'>
+						<img className='googleMap' src="/map_placeholder.png" alt="Map of Portland" />
+					</div>
 				</div>
 				<div className='child child2'>
-					{renderedListings}
+					
 				</div>
 			</div>
     </>
