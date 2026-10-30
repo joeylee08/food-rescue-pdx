@@ -24,13 +24,14 @@ body {
 p, h3 {
 	color: #343A40;
 }
+.footer,
 .header {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
-	height: auto;
+	min-height: 8rem;
 	background-color: #343A40;
 	color: white;
 	padding: 2rem;
@@ -71,12 +72,11 @@ a:hover {
   color: red;
 }
 .home .child1 {
-	width: 95%;
+	width: 90%;
 	height: 40rem;
-	margin: 0 auto;
+	margin: 3rem auto 0 auto;
 	display: grid;
 	grid-template-columns: 3fr 5fr;
-	margin-top: 2rem;
 	border: 0.05rem solid #bbbbbb;
 	border-radius: 0.8rem;
 	box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.10);
@@ -197,10 +197,60 @@ a:hover {
 	margin: 0;
 }
 .home .child2 {
-	margin: 0 auto;
+	margin: 2rem auto 0 auto;
 	width: 95%;
-	border: 2px solid red;
-	height: 20rem;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.sectionHeading {
+	font-size: 2rem;
+	font-weight: 500;
+	color: #343A40;
+}
+.home .child2a {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: center;
+	gap: 3rem;
+}
+.statCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 18rem;
+	height: 12rem;
+	border: 0.05rem solid #bbbbbb;
+	border-radius: 0.5rem;
+	background-color: white;
+	box-shadow: 0.2rem 0 0.4rem -0.2rem rgba(0, 0, 0, 0.15);
+	position: relative;
+	z-index: 1;
+}
+.statCard .count {
+	font-size: 2rem;
+	font-weight: 500;
+	color: #FF8A3D;
+	margin: 0 0 0.5rem 0;
+}
+.statCard > p {
+	margin: 0;
+	font-size: 1.2rem;
+}
+.home .child3 {
+	margin: 2rem auto 5rem auto;
+	width: 80%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.home .child3 p {
+	margin: 0;
+	font-size: 1.2rem;
 }
 .snackbar {
   position: fixed;

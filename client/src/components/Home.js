@@ -1,5 +1,6 @@
 import NavBar from './NavBar'
 import Header from './Header'
+import Footer from './Footer'
 import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../context/UserContext'
 import UserInfo from './UserInfo'
@@ -12,7 +13,7 @@ const Home = () => {
 	const [listings, setListings] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(null)
-	const [modal, setModal] = useState(true)
+	const [modal, setModal] = useState(false)
 	const [selectedListing, setSelectedListing] = useState(null)
 
   useEffect(() => {
@@ -53,9 +54,30 @@ const Home = () => {
 					</div>
 				</div>
 				<div className='child child2'>
-					
+					<h3 className='sectionHeading'>Our Community Impact</h3>
+					<div className='child2a'>
+						<div className='statCard'>
+							<p className='count'>1,230</p>
+							<p>Active Listings</p>
+						</div>
+						<div className='statCard'>
+							<p className='count'>38</p>
+							<p>Participating Businesses</p>
+						</div>
+						<div className='statCard'>
+							<p className='count'>6,230</p>
+							<p>Meals Rescued</p>
+						</div>
+					</div>
+				</div>
+				<div className='child child3'>
+					<h3 className='sectionHeading'>About Food Rescue PDX</h3>
+					<p>Every day, businesses have surplus food that could nourish someone in their community. Too often, that food goes to waste while individuals and families struggle with food insecurity.</p>
+					<br/>
+					<p>Food Rescue PDX connects local businesses with people who can put that food to good use. By making surplus food easier to discover and collect, we're building a more resourceful, connected, and sustainable Portland.</p>
 				</div>
 			</div>
+			<Footer/>
     </>
   )
 }
