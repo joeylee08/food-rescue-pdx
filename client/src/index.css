@@ -1,8 +1,9 @@
 /* 
 off white: #fcfcfc;
 soft orange: #FFF0E5;
+bright orange: #FF8A3D
 deep orange: #D95A1B;
-light gray: #E8E8E8;
+light gray: #bbbbbb;
 muted gray: #777777;
 black: #171717;
 */
@@ -29,7 +30,7 @@ body {
 	padding: 2rem;
 }
 .header > h3 {
-	font-size: 6rem;
+	font-size: 5rem;
 	margin: 0;
 	color: #171717;
 }
@@ -58,24 +59,74 @@ a {
   color: #171717;
   text-decoration: none;
 }
-
 a:hover {
   color: red;
 }
-.mainPage .child1 {
+.home .child1 {
+	width: 80%;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-top: 2rem;
+	border: 0.05rem solid #bbbbbb;
+	border-radius: 0.8rem;
 }
-.searchBar {
-	width: 80%;
+.searchBarBox {
+	width: 100%;
 	height: 5rem;
-	border: 2px solid red;
+	background-color: #fcfcfc;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	border-radius: 0.8rem 0.8rem 0 0;
+}
+.searchQuery {
+	width: 18rem;
+	height: 1.8rem;
+	border-radius: 0.3rem;
+	border: 0.08rem solid #BBBBBB;
+	font-size: 1.2rem;
+	padding-left: 0.4rem;
+}
+.searchQuery:focus {
+	outline: none;
+	border: 0.08rem solid #FF8A3D;
+}
+.searchGo {
+	height: 2rem;
+	width: 5rem;
+	color: #FF8A3D;
+	background-color: white;
+	border: 0.08rem solid #FF8A3D;
+	font-size: 1.2rem;
+	border-radius: 0.3rem;
+	box-shadow: none;
+	cursor: pointer;
+}
+.searchGo:hover {
+	background-color: #FF8A3D;
+	color: white;
 }
 .googleMap {
 	height: auto;
-	border: 2px solid red;
+	width: 100%;
+	border-radius: 0 0 0.8rem 0.8rem;
+}
+.home .child2 {
 	width: 80%;
+	border: 2px solid red;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.listingCard {
+	width: 12rem;
+	height: 10rem;
+	border: 2px solid blue;
 }
 .snackbar {
   position: fixed;
@@ -92,15 +143,12 @@ a:hover {
   z-index: 99;
   font-size: 0.9rem;
 }
-
 .snackbar h2 {
   margin: auto;
 }
-
 .form {
   background-color: #f4f4f4;
 }
-
 .loginForm {
   margin: auto;
   display: flex;
@@ -113,9 +161,7 @@ a:hover {
   border: 7px solid #435334;
   background-color: #ffffff;
   padding: 0.8rem 2rem 1.7rem 2rem;
-  font-family: math, fantasy;
 }
-
 .searchForm {
   display: flex;
   flex-direction: row;
@@ -125,44 +171,36 @@ a:hover {
   width: 100%;
   height: 7rem;
   background-color: #ffffff;
-  font-family: math, fantasy;
   font-size: 1.1rem;
 }
-
 button.searchInput {
   width: 5rem;
   font-family: math, fantasy;
   font-size: 1rem;
 }
-
 input.searchInput {
   width: 300px;
   font-family: math, fantasy;
   font-size: 1.1rem;
 }
-
 .formTag {
   height: 1.5rem;
   margin: 1.5rem 0px 0.5rem 0px;
 }
-
 .formTagDelete {
   height: 1.5rem;
   margin: 1rem 0px 1.2rem 0px;
 }
-
 h1.formTitle {
   font-family: fantasy, math;
   color: #435334;
 }
-
 .loginBar {
   margin-top: -1rem;
   height: 0.5rem;
   width: 100%;
   background-color: #0b6623;
 }
-
 .loginInput {
   width: 220px;
   height: 1.4rem;
@@ -170,7 +208,6 @@ h1.formTitle {
   font-family: math, fantasy;
   font-size: 1rem;
 }
-
 .loginInputProduct {
   width: 340px;
   height: 1.4rem;
@@ -178,7 +215,6 @@ h1.formTitle {
   font-family: math, fantasy;
   font-size: 1rem;
 }
-
 .loginInputLocation {
   width: 340px;
   height: 1.4rem;
@@ -193,29 +229,15 @@ h1.formTitle {
   font-family: math, fantasy;
   font-size: 1rem;
 }
-
 .loginCheckbox {
   width: 1.4rem;
   height: 1.4rem;
   font-family: math, fantasy;
 }
-
 .formBtnWrapper {
   display: flex;
   gap: 1.2rem;
 }
-
-.container {
-  font-family: math, fantasy;
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  width: 100%;
-  height: auto;
-  min-width: 900px;
-  max-width: auto;
-}
-
 .content {
   background-color: #f4f4f4;
   display: flex;
@@ -225,29 +247,11 @@ h1.formTitle {
   padding: 2rem 1rem 2rem 1rem;
   height: auto;
 }
-
 .loginContent {
   background-color: #f4f4f4;
   padding: 2rem 1rem 2rem 1rem;
   height: auto;
 }
-
-#logoutBtn {
-  width: 9rem;
-  height: 2.8rem;
-  border-radius: 7px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  font-family: math, fantasy;
-  background-color: #ffffff;
-  padding-top: 0.4rem;
-  color: #435334;
-}
-
-#logoutBtn:hover {
-  border: 3px solid red;
-}
-
 .noListings {
   margin: 2.5rem auto auto auto;
   font-size: 1.8rem;
@@ -256,22 +260,6 @@ h1.formTitle {
   height: 100px;
   text-align: center;
 }
-
-.listingCard {
-  width: 272px;
-  height: 235px;
-  background-color: #ffffff;
-  border: 1px solid #435334;
-  padding: 0rem 0.6rem 0rem 1rem;
-  border-radius: 5px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 2px 2px 4px #435334;
-}
-
 .cardBtnWrapper {
   width: 100%;
   display: flex;
@@ -281,7 +269,6 @@ h1.formTitle {
   margin-top: 0.9rem;
   margin-left: -7px;
 }
-
 .cardBtn {
   width: 75px;
   height: 30px;
@@ -293,11 +280,9 @@ h1.formTitle {
   border: 2px solid green;
   line-height: 23px;
 }
-
 .cardBtn:hover {
   border: 2px solid red;
 }
-
 .modal {
   position:fixed;
   margin: auto;
@@ -305,7 +290,6 @@ h1.formTitle {
   margin-top: 0.5rem;
   z-index: 9;
 }
-
 .modalDetails {
   margin:auto;
   display: block;
@@ -316,51 +300,35 @@ h1.formTitle {
   background-color: #ffffff;
   padding: 1rem 1.2rem 1rem 1.2rem;
 }
-
 .modalDetails h1 {
   color: #435334;
-  font-family: fantasy, math;
   margin-top: 0.5rem;
 }
-
 .listingsMap {
   width: 100%;
   margin: 0px;
   height: 400px;
 }
-
-.homeImage {
-  width: 100%;
-  height: 390px;
-  object-fit: cover;
-  opacity: 0.9;
-}
-
 .modalMap {
   width: 100%;
   margin: 1rem 0px 1.5rem 0px;
   height: 240px;
 }
-
 .dietTag {
   margin: 0.5rem 0rem 0.5rem 0rem;
 }
-
 .greenCheck {
   color: green;
 }
-
 .redX {
   color: red;
 }
-
 .modalBar {
   height: 0.5rem;
   width: 100%;
   margin: -0.4rem 0rem 1.5rem 0rem;
   background-color: #0b6623;
 }
-
 .modalBtn {
   width: 120px;
   height: 40px;
@@ -372,73 +340,20 @@ h1.formTitle {
   border: 2px solid green;
   padding-top: 0.3rem;
 }
-
 .modalBtn:hover {
   border: 2px solid red;
 }
-
 .checkBoxes {
   width: 180px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-
 .checkboxPair {
   display: flex;
   align-items: end;
   justify-content: space-between;
 }
-
-div.listingCard p#poster {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  text-align: left;
-  width: 100%;
-  height: 2.5rem;
-  line-height: 1.25rem;
-  margin-top: 0.8rem;
-  margin-bottom: 0px;
-}
-
-div.listingCard p#expires {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  text-align: left;
-  width: 100%;
-  height: 1rem;
-  margin-top: -0.4rem;
-  margin-bottom: 0px;
-}
-
-div.listingCard h3 {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  text-align: left;
-  height: 2.2rem;
-  margin-top: 10px;
-  margin-bottom: 0rem;
-  line-height: 1.5rem;
-  color: #0b6623;
-  font-family: fantasy, math;
-}
-
-div.listingCard h4 {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  text-align: left;
-  width: 100%;
-  height: 1rem;
-  margin-top: 18px;
-  margin-bottom: 0rem;
-}
-
 .userDetails {
   display: flex;
   flex-direction: column;
@@ -450,34 +365,21 @@ div.listingCard h4 {
   height: 200px;
   margin: 0px;
 }
-.homeDetails h1 {
-  font-family: fantasy, math;
-  font-size: 2.3rem;
-  color: #435334;
-}
-
-.homeDetails p {
-  font-family: math, fantasy;
-}
-
 .profileContent {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 2rem;
 }
-
 .profileBtnWrapper {
   display: flex;
   gap: 1.2rem;
 }
-
 #savedCheck {
   color: #0000FF;
   font-family: math, fantasy;
   font-size: 1.1rem;
 }
-
 #savedListingCheck {
   color: #0000FF;
   font-family: math, fantasy;
