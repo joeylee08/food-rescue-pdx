@@ -1,10 +1,15 @@
 const ListingCard = ({ listing }) => {
 	return (
 		<div className="listingCard">
-			<h3>{listing.product}</h3>
-			<p>{listing.business_name}</p>
-			<p>Quantity: {listing.quantity}</p>
-			<p>{listing.location}</p>
+			<div className='itemAndQty'>
+				<p className='productName'>{listing.product}</p>
+				<p>Quantity: {listing.quantity}</p>
+			</div>
+			<div className='nameAndLocation'>
+				<p>{listing.business_name}</p>
+			</div>
+			
+			
 		</div>
 	)
 }

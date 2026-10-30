@@ -124,7 +124,7 @@ class CurrentUser(Resource):
 class Listings(Resource):
     def get(self):
         try:
-            all_listings = [listing.to_dict() for listing in Listing.query]
+            all_listings = [listing.to_public_dict() for listing in Listing.query]
             all_listings.sort(key=lambda item: datetime.fromisoformat(item['created_at']), reverse=True)
 
             return make_response(all_listings, 200)
