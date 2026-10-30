@@ -100,7 +100,7 @@ class Listing(db.Model, SerializerMixin):
     __tablename__ = 'listings'
 
     id = db.Column(db.Integer, primary_key=True)
-    product = db.Column(db.String, nullable=False)
+    product = db.Column(db.String(28), nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
     expiration_date = db.Column(db.String, nullable=False)
     business_id = db.Column(db.Integer, db.ForeignKey('businesses.id')) 

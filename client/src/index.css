@@ -165,11 +165,12 @@ a:hover {
 .listingCard {
 	display: flex;
 	width: 98%;
+	min-width: 23rem;
 	height: 3.5rem;
 	border: 0.05rem solid #bbbbbb;
 	border-radius: 0.5rem;
 	background-color: white;
-	padding: 0.5rem 1rem;
+	padding: 0.5rem 0.8rem;
 	transition: box-shadow 0.5s ease, border-color 0.5s ease;
 }
 .listingCard:hover {

@@ -89,7 +89,7 @@ def create_listings():
         notes='Please pickup between 3 and 6 PM. Ask for manager Luis.'
     )
     l3 = Listing(
-        product='Rainman\'s Best Fishsticks Frozen 24oz',
+        product='Rainman\'s Best Fishstks 24oz',
         quantity=12,
         expiration_date='02/12/28',
         business_id = 1,
@@ -107,7 +107,7 @@ def create_listings():
         notes='Please pickup between 3 and 6 PM. Ask for manager Victoria.'
     )
     l5 = Listing(
-        product='Ensure 20g Protein Formula 12 Pack',
+        product='Ensure 20g Protein Shake x 12',
         quantity=8,
         expiration_date='02/12/28',
         business_id = 1,
@@ -134,7 +134,7 @@ def create_listings():
         notes='Please pickup between 5 and 8 PM. Ask for manager Miguel.'
     )
     l8 = Listing(
-        product='Frozen Vegetables, Mixed 16oz bags',
+        product='Frozen Veg, Mixed 16oz Bags',
         quantity=8,
         expiration_date='02/12/28',
         business_id = 2,
@@ -143,7 +143,7 @@ def create_listings():
         notes='Please pickup between 5 and 8 PM. Ask for manager Miguel.'
     )
     l9 = Listing(
-        product='Frozen Hamburger Patties 1/4 Pound',
+        product='Frozen Burger Patties 1/4lb',
         quantity=16,
         expiration_date='02/12/28',
         business_id = 2,
@@ -265,6 +265,13 @@ if __name__ == '__main__':
         db.session.commit()
 
         db.session.query(User).delete()
+        db.session.commit()
+
+        db.session.execute(db.text("""
+					ALTER SEQUENCE users_id_seq RESTART WITH 1;
+					ALTER SEQUENCE businesses_id_seq RESTART WITH 1;
+					ALTER SEQUENCE listings_id_seq RESTART WITH 1;
+				"""))
         db.session.commit()
 
         create_users()
