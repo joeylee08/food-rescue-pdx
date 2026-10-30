@@ -6,6 +6,8 @@ deep orange: #D95A1B;
 light gray: #bbbbbb;
 muted gray: #777777;
 black: #171717;
+
+background gray: #EFEFEF;
 */
 
 * {
@@ -13,7 +15,7 @@ black: #171717;
   font-optical-sizing: auto;
 }
 body {
-  background-color: #E8E8E8;
+  background-color: #EFEFEF;
   margin-bottom: 2rem;
 	width: 100%;
 	margin: 0;
@@ -119,6 +121,7 @@ a:hover {
 	width: 80%;
 	border: 2px solid red;
 	margin: 0 auto;
+	margin-top: 2rem;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -127,6 +130,7 @@ a:hover {
 	width: 12rem;
 	height: 10rem;
 	border: 2px solid blue;
+	background-color: #fcfcfc;
 }
 .snackbar {
   position: fixed;
