@@ -5,12 +5,15 @@ import { UserContext } from '../context/UserContext'
 import UserInfo from './UserInfo'
 import ListingCard from './ListingCard'
 import { Search } from "lucide-react";
+import Modal from './Modal.js'
 
 const Home = () => {
   const { loginType, currentUser } = useContext(UserContext)
 	const [listings, setListings] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(null)
+	const [modal, setModal] = useState(true)
+	const [selectedListing, setSelectedListing] = useState(null)
 
   useEffect(() => {
 		console.log('LISTINGS FETCH ATTEMPTED')
@@ -33,6 +36,7 @@ const Home = () => {
       <Header title={'Food Rescue PDX'}/>
       {/* <NavBar/> */}
       {currentUser && <UserInfo />}
+			{modal && listings?.[0] && <Modal selectedListing={listings[0]}/>}
 			<div className='mainPage home'>
 				<div className='child child1'>
 					<div className='child child1a'>
