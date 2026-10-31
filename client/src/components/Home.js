@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../context/UserContext'
 import UserInfo from './UserInfo'
 import ListingCard from './ListingCard'
-import { Search } from "lucide-react";
+import { Search, Van, Utensils } from "lucide-react";
 import Modal from './Modal.js'
 
 const Home = () => {
@@ -39,6 +39,23 @@ const Home = () => {
       {currentUser && <UserInfo />}
 			{modal && listings?.[0] && <Modal selectedListing={listings[0]}/>}
 			<div className='mainPage home'>
+				<div className='child child0'>
+					<div className='instructions'>
+						<Search className='instructionIcon' size={45}/>
+						<br/>
+						<p>1. Find the food you need.</p>
+					</div>
+					<div className='instructions'>
+						<Van className='instructionIcon' size={45}/>
+						<br/>
+						<p>2. Arrange a local pickup.</p>
+					</div>
+					<div className='instructions'>
+						<Utensils className='instructionIcon' size={45}/>
+						<br/>
+						<p>3. Enjoy your food!</p>
+					</div>
+				</div>
 				<div className='child child1'>
 					<div className='child child1a'>
 						<div className='searchBar'>

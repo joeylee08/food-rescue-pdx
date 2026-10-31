@@ -102,7 +102,7 @@ a:hover {
 	height: 100%;
 	width: 100%;
 	border: none;
-	padding: 0.1rem;
+	padding-right: 0.5rem;
 }
 .mapListings::-webkit-scrollbar {
 	width: 0.4rem;
@@ -166,12 +166,12 @@ a:hover {
 .listingCard {
 	display: flex;
 	width: 98%;
-	min-width: 23rem;
-	height: 3.5rem;
+	min-width: 25rem;
+	height: 4rem;
 	border: 0.05rem solid #bbbbbb;
 	border-radius: 0.5rem;
 	background-color: white;
-	padding: 0.5rem 0.8rem;
+	padding: 0.45rem 0.5rem;
 	transition: box-shadow 0.5s ease, border-color 0.5s ease;
 }
 .listingCard:hover {
@@ -181,15 +181,14 @@ a:hover {
 }
 .itemAndQty > p {
 	margin: 0;
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 }
 .productName {
-	font-size: 0.8rem;
 	font-weight: 550;
 	color: green;
 }
 .nameAndLocation {
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 	margin-left: auto;
 	text-align: right;
 }
@@ -252,6 +251,27 @@ a:hover {
 .home .child3 p {
 	margin: 0;
 	font-size: 1.2rem;
+}
+.home .child0 {
+	display: flex;
+	width: 85%;
+	margin: 4rem auto 0.5rem auto;
+	align-items: center;
+	justify-content: space-around;
+}
+.instructions {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.instructionIcon {
+	color: #ff8a3d;
+}
+.instructions > p {
+	margin: 0;
+	font-size: 1.2rem;
+	font-weight: 450;
 }
 .snackbar {
   position: fixed;
