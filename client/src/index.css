@@ -1,5 +1,5 @@
 /* 
-off white: #f0f0f0;
+off white: #fafafa;
 soft orange: #FFA766;
 bright orange: #FF8A3D
 deep orange: #D95A1B;
@@ -101,7 +101,7 @@ a:hover {
 	height: 100%;
 	width: 100%;
 	border: none;
-	padding: 0 0.5rem 0 0.07rem;
+	padding: 0.1rem 0.5rem 0 0.1rem;
 }
 .mapListings::-webkit-scrollbar {
 	width: 0.4rem;
