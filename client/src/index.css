@@ -1,5 +1,5 @@
 /* 
-off white: #fcfcfc;
+off white: #f0f0f0;
 soft orange: #FFA766;
 bright orange: #FF8A3D
 deep orange: #D95A1B;
@@ -16,7 +16,7 @@ background gray: #EFEFEF;
 	box-sizing: border-box;
 }
 body {
-  background-color: #EFEFEF;
+  background-color: #fafafa;
   margin-bottom: 2rem;
 	width: 100%;
 	margin: 0;
