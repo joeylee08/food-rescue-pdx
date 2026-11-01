@@ -77,6 +77,7 @@ a:hover {
 	margin: 3rem auto 0 auto;
 	display: grid;
 	grid-template-columns: 3fr 5fr;
+	overflow: hidden;
 	border: 0.05rem solid #bbbbbb;
 	border-radius: 0.8rem;
 	box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.10);
@@ -154,14 +155,7 @@ a:hover {
 	border: 0.08rem solid green;
 	color: green;
 }
-.googleMap {
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	border-radius: 1rem;
-	border-radius: 0 0.8rem 0.8rem 0;
-	object-fit: cover;
-}
+
 .listingCard {
 	display: flex;
 	width: 98%;
@@ -272,6 +266,59 @@ a:hover {
 	font-size: 1.2rem;
 	font-weight: 450;
 }
+.listingDetailsChild {
+	position: relative;
+}
+.listingBtnWrapper {
+	position: absolute;
+  display: flex;
+  top: 0;
+	right: 0;
+}
+.listingBtn {
+  width: 120px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  margin-top: 1rem;
+  font-family: fantasy, math;
+  font-size: 1.1rem;
+  border: 2px solid green;
+  padding-top: 0.3rem;
+}
+.listingBtn:hover {
+  border: 2px solid green;
+}
+.listingDetailsChild > p {
+	font-size: 0.9rem;
+	margin: 0.5rem auto;
+}
+.listingImg {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 1rem;
+	border-radius: 0.8rem;
+	object-fit: cover;
+}
+.listingDietTags {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, auto);
+}
+.dietTag {
+	font-size: 0.9rem;
+	margin: 0.25rem;
+}
+.greenCheck {
+  color: green;
+}
+.redX {
+  color: red;
+}
+/* STUFF BELOW THIS LINE IS FROM OLD PROJECT */
+
+
 .snackbar {
   position: fixed;
   display: flex;
@@ -378,10 +425,6 @@ h1.formTitle {
   height: 1.4rem;
   font-family: math, fantasy;
 }
-.formBtnWrapper {
-  display: flex;
-  gap: 1.2rem;
-}
 .content {
   background-color: #f4f4f4;
   display: flex;
@@ -458,35 +501,13 @@ h1.formTitle {
   margin: 1rem 0px 1.5rem 0px;
   height: 240px;
 }
-.dietTag {
-  margin: 0.5rem 0rem 0.5rem 0rem;
-}
-.greenCheck {
-  color: green;
-}
-.redX {
-  color: red;
-}
 .modalBar {
   height: 0.5rem;
   width: 100%;
   margin: -0.4rem 0rem 1.5rem 0rem;
   background-color: #0b6623;
 }
-.modalBtn {
-  width: 120px;
-  height: 40px;
-  background-color: #ffffff;
-  border-radius: 6px;
-  margin-top: 1rem;
-  font-family: fantasy, math;
-  font-size: 1.1rem;
-  border: 2px solid green;
-  padding-top: 0.3rem;
-}
-.modalBtn:hover {
-  border: 2px solid red;
-}
+
 .checkBoxes {
   width: 180px;
   display: flex;
