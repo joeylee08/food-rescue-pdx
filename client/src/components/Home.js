@@ -6,14 +6,14 @@ import { UserContext } from '../context/UserContext'
 import UserInfo from './UserInfo'
 import ListingCard from './ListingCard'
 import { Search, Van, Utensils } from "lucide-react";
-import Modal from './Modal.js'
+import ListingDetails from './ListingDetails.js'
 
 const Home = () => {
   const { loginType, currentUser } = useContext(UserContext)
 	const [listings, setListings] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(null)
-	const [modal, setModal] = useState(false)
+	const [viewingDetails, setViewingDetails] = useState(true)
 	const [selectedListing, setSelectedListing] = useState(null)
 
   useEffect(() => {
@@ -37,7 +37,6 @@ const Home = () => {
       <Header title={'Food Rescue PDX'}/>
       {/* <NavBar/> */}
       {currentUser && <UserInfo />}
-			{modal && listings?.[0] && <Modal selectedListing={listings[0]}/>}
 			<div className='mainPage home'>
 				<div className='child child0'>
 					<div className='instructions'>
@@ -63,6 +62,7 @@ const Home = () => {
 							<input className='searchQuery' placeholder='What are you looking for?'></input>
 						</div>
 						<div className='mapListings'>
+							{viewingDetails && listings?.[0] && <ListingDetails currentSaved={listings.slice(4)} selectedListing={listings[0]}/>}
 							{renderedListings}
 						</div>
 					</div>
