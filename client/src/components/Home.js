@@ -61,9 +61,12 @@ const Home = () => {
 							<Search className='searchIcon'/>
 							<input className='searchQuery' placeholder='What are you looking for?'></input>
 						</div>
-						<div className='mapListings'>
+						<div className='openListing'>
 							{viewingDetails && listings?.[0] && <ListingDetails currentSaved={listings.slice(4)} selectedListing={listings[0]}/>}
-							{renderedListings}
+							<button className='listingBtn'>SAVE</button>
+						</div>
+						<div className='mapListings'>
+							{/* {renderedListings} */}
 						</div>
 					</div>
 					<div className='child child1b'>

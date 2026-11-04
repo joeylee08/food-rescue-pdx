@@ -12,10 +12,6 @@ const ListingDetails = ({selectedListing, handleIsModal, currentSaved}) => {
 		<>
 			<div className='listingDetails'>
 				<div className="listingDetailsChild">
-					<div className='listingBtnWrapper'>
-						<button className='listingBtn' onClick={() => alert('closed listing')}>CLOSE</button>
-						<button className='listingBtn' id={selectedListing.id} onClick={() => alert('saved listing')}>{currentSaved.includes(selectedListing.id) ? 'UNSAVE' : 'SAVE'}</button>
-					</div>
 					<p className='productName'>{selectedListing.product}</p>
 					<p>Quantity: {selectedListing.quantity}</p>
 					<p>Expiration Date: {selectedListing.expiration_date}</p>
@@ -23,7 +19,6 @@ const ListingDetails = ({selectedListing, handleIsModal, currentSaved}) => {
 					<p>Location: {selectedListing.location}</p>
 					<p>Additional Notes: {selectedListing.notes}</p>
 					<img className='listingImg' src="/ragusauce.jpg" alt="Ragu Pasta Sauce" />
-					{/* <Map center={selectedListing.location} items={[]} mapClass={'modalMap'}/> */}
 					<div className='listingDietTags'>
 						<p className='dietTag'>Vegan {selectedListing.vegan_safe ? <span className='greenCheck'>✔</span> : <span className='redX'>✗</span>}</p>
 						<p className='dietTag'>Non Dairy {selectedListing.non_dairy ? <span className='greenCheck'>✔</span> : <span className='redX'>✗</span>}</p>

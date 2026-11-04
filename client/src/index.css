@@ -76,8 +76,7 @@ a:hover {
 	height: 40rem;
 	margin: 3rem auto 0 auto;
 	display: grid;
-	grid-template-columns: 3fr 5fr;
-	overflow: hidden;
+	grid-template-columns: minmax(27rem, 3fr) 5fr;
 	border: 0.05rem solid #bbbbbb;
 	border-radius: 0.8rem;
 	box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.10);
@@ -85,37 +84,55 @@ a:hover {
 .home .child1a {
 	display: flex;
 	flex-direction: column;
-	min-height: 0;
+	height: 100%;
 	border-radius: 0.8rem 0 0 0.8rem;
 	padding: 0.9rem 0.5rem 0rem 0.8rem;
 	background-color: white;
 	box-shadow: 0.2rem 0 0.4rem -0.2rem rgba(0, 0, 0, 0.15);
 	position: relative;
 	z-index: 1;
+	overflow: hidden;
+}
+.openListing {
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin: 0 auto;
+	height: auto;
+	width: 97.5%;
+	padding-right: 0.8rem;
+	border: none;
 }
 .mapListings {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
-	overflow: scroll;
+	overflow-y: auto;
+	overflow-x: hidden;
 	margin: 0;
-	height: 100%;
+	height: auto;
 	width: 100%;
 	border: none;
-	padding: 0.1rem 0.5rem 0 0.1rem;
+	padding: 0.1rem 0rem 0.8rem 0.1rem;
 }
+.openListing::-webkit-scrollbar,
 .mapListings::-webkit-scrollbar {
 	width: 0.4rem;
 }
+.openListing::-webkit-scrollbar-track,
 .mapListings::-webkit-scrollbar-track {
 	background: transparent;
+	margin-bottom: 0.5rem;
 }
+.openListing::-webkit-scrollbar-thumb,
 .mapListings::-webkit-scrollbar-thumb {
 	background: #aaa;
 	border-radius: 0.8rem;
 }
+.openListing::-webkit-scrollbar-thumb:hover,
 .mapListings::-webkit-scrollbar-thumb:hover {
-	background: #777;
+	background: #aaa;
 }
 .searchBar {
 	width: 98%;
@@ -155,12 +172,10 @@ a:hover {
 	border: 0.08rem solid green;
 	color: green;
 }
-
 .listingCard {
 	display: flex;
 	width: 98%;
-	min-width: 25rem;
-	height: 4rem;
+	max-height: 4rem;
 	border: 0.05rem solid #bbbbbb;
 	border-radius: 0.5rem;
 	background-color: white;
@@ -187,6 +202,9 @@ a:hover {
 }
 .nameAndLocation > p {
 	margin: 0;
+}
+.home .child1b {
+	overflow: hidden;
 }
 .home .child2 {
 	margin: 2rem auto 0 auto;
