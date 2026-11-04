@@ -86,10 +86,8 @@ a:hover {
 	flex-direction: column;
 	height: 100%;
 	border-radius: 0.8rem 0 0 0.8rem;
-	padding: 0.9rem 0.5rem 0rem 0.8rem;
 	background-color: white;
 	box-shadow: 0.2rem 0 0.4rem -0.2rem rgba(0, 0, 0, 0.15);
-	position: relative;
 	z-index: 1;
 	overflow: hidden;
 }
@@ -98,10 +96,9 @@ a:hover {
 	flex-direction: column;
 	overflow-y: auto;
 	overflow-x: hidden;
-	margin: 0 auto;
 	height: auto;
-	width: 97.5%;
-	padding-right: 0.8rem;
+	width: 100%;
+	padding: 0.8rem 0.8rem 1.2rem 1.2rem;
 	border: none;
 }
 .mapListings {
@@ -110,11 +107,11 @@ a:hover {
 	gap: 0.5rem;
 	overflow-y: auto;
 	overflow-x: hidden;
-	margin: 0;
+	margin: 0rem 0 0rem 0.8rem;
+	padding: 0.2rem 0.2rem 1rem 0.1rem;
 	height: auto;
-	width: 100%;
+	width: auto;
 	border: none;
-	padding: 0.1rem 0rem 0.8rem 0.1rem;
 }
 .openListing::-webkit-scrollbar,
 .mapListings::-webkit-scrollbar {
@@ -123,7 +120,6 @@ a:hover {
 .openListing::-webkit-scrollbar-track,
 .mapListings::-webkit-scrollbar-track {
 	background: transparent;
-	margin-bottom: 0.5rem;
 }
 .openListing::-webkit-scrollbar-thumb,
 .mapListings::-webkit-scrollbar-thumb {
@@ -135,7 +131,7 @@ a:hover {
 	background: #aaa;
 }
 .searchBar {
-	width: 98%;
+	width: auto;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -144,7 +140,10 @@ a:hover {
 	border: 0.08rem solid #BBBBBB;
 	gap: 0.5rem;
 	padding: 0.5rem;
-	margin-bottom: 0.9rem;
+	margin: 1rem 1rem 0.8rem 0.8rem;
+}
+.isHidden {
+	display: none;
 }
 .searchIcon {
 	color: #ff8a3d;
@@ -287,29 +286,35 @@ a:hover {
 .listingDetailsChild {
 	position: relative;
 }
-.listingBtnWrapper {
-	position: absolute;
+.listingBtnBox {
   display: flex;
-  top: 0;
-	right: 0;
+	width: 100%;
+	align-items: center;
+	justify-content: flex-start;
+  gap: 1rem;
 }
 .listingBtn {
-  width: 120px;
-  height: 40px;
+  width: 7rem;
+  height: 2.1rem;
   background-color: #ffffff;
-  border-radius: 6px;
-  margin-top: 1rem;
-  font-family: fantasy, math;
-  font-size: 1.1rem;
-  border: 2px solid green;
-  padding-top: 0.3rem;
+  border-radius: 0.4rem;
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  border: 0.1rem solid green;
 }
 .listingBtn:hover {
   border: 2px solid green;
+	background-color: green;
+	color: white
 }
 .listingDetailsChild > p {
 	font-size: 0.9rem;
 	margin: 0.5rem auto;
+	line-height: 1.2rem;
+}
+.listingDetailsChild > .productName {
+	font-size: 1.1rem;
+	line-height: 1.6rem;;
 }
 .listingImg {
 	width: 100%;
@@ -320,6 +325,7 @@ a:hover {
 	object-fit: cover;
 }
 .listingDietTags {
+	margin-top: 0.2rem;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(2, auto);
@@ -335,7 +341,6 @@ a:hover {
   color: red;
 }
 /* STUFF BELOW THIS LINE IS FROM OLD PROJECT */
-
 
 .snackbar {
   position: fixed;
@@ -481,7 +486,6 @@ h1.formTitle {
   background-color: #ffffff;
   padding-top: 0.2rem;
   border-radius: 5px;
-  font-family: fantasy, math;
   border: 2px solid green;
   line-height: 23px;
 }

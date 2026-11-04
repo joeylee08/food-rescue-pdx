@@ -9,11 +9,26 @@ import { Search, Van, Utensils } from "lucide-react";
 import ListingDetails from './ListingDetails.js'
 
 const Home = () => {
+	const dummyListing = {
+		id: 999,
+		product: "22oz Ragu Pasta Sauce",
+		quantity: 25,
+		business_id: 1,
+		business_name: "Sureway PDX",
+		location: "1030 SW Jefferson St, Portland OR",
+		expiration_date: "11/20/26",
+		notes: "Please pick up between 3 and 6 PM. Ask for manager Luis.",
+		vegan_safe: true,
+		non_dairy: true,
+		gluten_free: false,
+		nut_free: true,
+		soy_free: true,
+		created_at: "2026-11-04T09:00:00"
+	}
   const { loginType, currentUser } = useContext(UserContext)
 	const [listings, setListings] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(null)
-	const [viewingDetails, setViewingDetails] = useState(true)
 	const [selectedListing, setSelectedListing] = useState(null)
 
   useEffect(() => {
@@ -57,16 +72,19 @@ const Home = () => {
 				</div>
 				<div className='child child1'>
 					<div className='child child1a'>
-						<div className='searchBar'>
+						<div className={`searchBar ${selectedListing ? 'isHidden' : ''}`}>
 							<Search className='searchIcon'/>
 							<input className='searchQuery' placeholder='What are you looking for?'></input>
 						</div>
-						<div className='openListing'>
-							{viewingDetails && listings?.[0] && <ListingDetails currentSaved={listings.slice(4)} selectedListing={listings[0]}/>}
-							<button className='listingBtn'>SAVE</button>
+						<div className={`openListing ${selectedListing ? '' : 'isHidden'}`}>
+							{listings?.[0] && <ListingDetails currentSaved={listings.slice(4)} selectedListing={listings[0]}/>}
+							<div className='listingBtnBox'>
+								<button className='listingBtn'>SAVE</button>
+							<button className='listingBtn'>BACK</button>
+							</div>
 						</div>
-						<div className='mapListings'>
-							{/* {renderedListings} */}
+						<div className={`mapListings ${selectedListing ? 'isHidden' : ''}`}>
+							{renderedListings}
 						</div>
 					</div>
 					<div className='child child1b'>
