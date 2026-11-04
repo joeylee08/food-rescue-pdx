@@ -9,28 +9,13 @@ import { Search, Van, Utensils } from "lucide-react";
 import ListingDetails from './ListingDetails.js'
 
 const Home = () => {
-	const dummyListing = {
-		id: 999,
-		product: "22oz Ragu Pasta Sauce",
-		quantity: 25,
-		business_id: 1,
-		business_name: "Sureway PDX",
-		location: "1030 SW Jefferson St, Portland OR",
-		expiration_date: "11/20/26",
-		notes: "Please pick up between 3 and 6 PM. Ask for manager Luis.",
-		vegan_safe: true,
-		non_dairy: true,
-		gluten_free: false,
-		nut_free: true,
-		soy_free: true,
-		created_at: "2026-11-04T09:00:00"
-	}
   const { loginType, currentUser } = useContext(UserContext)
 	const [listings, setListings] = useState([])
-	const [loading, setLoading] = useState(true)
-	const [error, setError] = useState(null)
 	const [selectedListing, setSelectedListing] = useState(null)
 
+	const [loading, setLoading] = useState(true)
+	const [error, setError] = useState(null)
+	
   useEffect(() => {
 		console.log('LISTINGS FETCH ATTEMPTED')
     fetch('/listings')
@@ -84,7 +69,7 @@ const Home = () => {
 							{selectedListing && <ListingDetails currentSaved={listings.slice(4)} selectedListing={selectedListing}/>}
 							<div className='listingBtnBox'>
 								<button className='listingBtn'>SAVE</button>
-							<button className='listingBtn' onClick={clearListing}>BACK</button>
+								<button className='listingBtn' onClick={clearListing}>BACK</button>
 							</div>
 						</div>
 						<div className={`mapListings ${selectedListing ? 'isHidden' : ''}`}>
