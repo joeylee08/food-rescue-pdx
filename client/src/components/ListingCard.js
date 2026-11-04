@@ -1,6 +1,6 @@
-const ListingCard = ({ listing }) => {
+const ListingCard = ({ listing, onSelect }) => {
 	return (
-		<div className="listingCard">
+		<div className="listingCard" onClick={() => onSelect(listing)}>
 			<div className='itemAndQty'>
 				<p className='productName'>{listing.product}</p>
 				<p>Quantity: {listing.quantity}</p>

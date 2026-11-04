@@ -43,8 +43,12 @@ const Home = () => {
 			.finally(() => setLoading(false))
   }, [])
 
+	const clearListing = () => {
+		setSelectedListing(null)
+	}
+
 	const renderedListings = listings.map(item => (
-		<ListingCard key={item.id} listing={item} />
+		<ListingCard key={item.id} listing={item} onSelect={setSelectedListing}/>
 	))
 
   return (
@@ -77,10 +81,10 @@ const Home = () => {
 							<input className='searchQuery' placeholder='What are you looking for?'></input>
 						</div>
 						<div className={`openListing ${selectedListing ? '' : 'isHidden'}`}>
-							{listings?.[0] && <ListingDetails currentSaved={listings.slice(4)} selectedListing={listings[0]}/>}
+							{selectedListing && <ListingDetails currentSaved={listings.slice(4)} selectedListing={selectedListing}/>}
 							<div className='listingBtnBox'>
 								<button className='listingBtn'>SAVE</button>
-							<button className='listingBtn'>BACK</button>
+							<button className='listingBtn' onClick={clearListing}>BACK</button>
 							</div>
 						</div>
 						<div className={`mapListings ${selectedListing ? 'isHidden' : ''}`}>

@@ -1,11 +1,8 @@
 import { useLocation } from 'react-router-dom'
 import { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
-import Map from './Map'
 
-const ListingDetails = ({selectedListing, handleIsModal, currentSaved}) => {
-  const location = useLocation()
-  const path = location.pathname
+const ListingDetails = ({selectedListing, currentSaved}) => {
   const {currentUser, handleOpenSnack} = useContext(UserContext)
   
 	return (
