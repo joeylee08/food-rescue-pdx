@@ -363,6 +363,7 @@ a:hover {
 	border: 2px solid red;
 	width: 70%;
 	margin: 0 auto;
+	padding: 2rem;
 }
 .createEditForm {
 	width: 100%;
@@ -378,22 +379,48 @@ h3.formTitle {
 h3.formTag {
 	font-size: 1.2rem;
 	color: #FF8A3D;
-	margin: 0;
+	margin: 0 0 0.2rem 0;
 }
 .inputsWrapper {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+	margin: 1.2rem 0 1.7rem 0;
+}
+.inputsWrapper input {
+	height: 2rem;
+	width: 53%;
+	min-width: 20rem;
+	margin-bottom: 0.5rem;
+	border-radius: 0.3rem;
+	border: 0.05rem solid #343A40;
+	padding-left: 0.4rem;
+}
+.inputsWrapper textarea {
+	height: 6rem;
+	width: 77%;
+	min-width: 30rem;
+	border-radius: 0.3rem;
+	border: 0.05rem solid #343A40;
+	padding: 0.4rem;
 }
 .checkBoxes {
   width: 180px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+	margin-bottom: 1.1rem;
+	margin-left: 0.2rem;
 }
 .checkboxPair {
+	width: 10rem;
   display: flex;
   align-items: end;
   justify-content: space-between;
+}
+.createEditForm .formBtnWrapper {
+	display: flex;
+	gap: 1rem;
 }
 
 /* STUFF BELOW THIS LINE IS FROM OLD PROJECT */
