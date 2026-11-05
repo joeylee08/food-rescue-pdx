@@ -5,27 +5,40 @@ import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../context/UserContext'
 import UserInfo from './UserInfo'
 import ListingCard from './ListingCard'
-import { Search, Van, Utensils } from "lucide-react";
 import ListingDetails from './ListingDetails.js'
+import { Search, Van, Utensils } from "lucide-react";
+import CreateEditListing from './CreateEditListing.js'
 
 const Home = () => {
-  const { loginType, currentUser } = useContext(UserContext)
-	const [listings, setListings] = useState([])
-	const [selectedListing, setSelectedListing] = useState(null)
+	const dummyListing = {
+		id: 999,
+		product: "22oz Ragu Pasta Sauce",
+		quantity: 25,
+		business_id: 1,
+		business_name: "Sureway PDX",
+		location: "1030 SW Jefferson St, Portland, OR",
+		expiration_date: "11/20/26",
+		notes: "Please pick up between 3 PM and 6 PM. Ask for manager Luis.",
+		vegan_safe: true,
+		non_dairy: true,
+		gluten_free: false,
+		nut_free: true,
+		soy_free: true,
+		created_at: "2026-11-04T09:00:00"
+	};
+  const { currentUser } = useContext(UserContext)
 
-	const [loading, setLoading] = useState(true)
-	const [error, setError] = useState(null)
-	
+	const [listings, setListings] = useState([])
+	const [selectedListing, setSelectedListing] = useState(dummyListing)
+
   useEffect(() => {
-		console.log('LISTINGS FETCH ATTEMPTED')
     fetch('/listings')
 			.then(res => {
 				if (!res.ok) throw new Error('Unable to fetch listings.')
 				return res.json()
 			})
 			.then(data => setListings(data))
-			.catch(error => setError(error.message))
-			.finally(() => setLoading(false))
+			.catch(error => alert(error.message))
   }, [])
 
 	const clearListing = () => {
@@ -38,6 +51,7 @@ const Home = () => {
 
   return (
     <>
+			<CreateEditListing selectedListing={dummyListing}/>
       <Header title={'Food Rescue PDX'}/>
       {/* <NavBar/> */}
       {currentUser && <UserInfo />}

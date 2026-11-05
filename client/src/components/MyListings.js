@@ -1,7 +1,7 @@
 import NavBar from './NavBar'
 import Header from './Header'
 import { useState, useEffect, useContext } from 'react'
-import Modal from './Modal'
+import Modal from './CreateEditListing'
 import { UserContext } from '../context/UserContext'
 import Snackbar from './Snackbar'
 
@@ -9,7 +9,7 @@ const MyListings = () => {
   const [myListings, setMyListings] = useState([])
   const [isModal, setIsModal] = useState(false)
   const [selectedListing, setSelectedListing] = useState({})
-  const {currentUser, loginType} = useContext(UserContext)
+  const {currentUser} = useContext(UserContext)
   const {isSnack, snackText, handleCloseSnack, handleOpenSnack} = useContext(UserContext)
   
   const handleIsModal = () => {
@@ -17,7 +17,7 @@ const MyListings = () => {
   }
   
   const fetchListings = () => {
-    if (loginType == 'user') {
+    if (currentUser.login_type == 'user') {
       fetch(`/ulbyuserid/${currentUser['id']}`)
       .then(res => res.json())
       .then(data => {
@@ -52,7 +52,7 @@ const MyListings = () => {
   const handleDelete = (e) => {
     const listing_id = e.target.id
   
-    if (loginType === 'user') {
+    if (currentUser.login_type === 'user') {
       fetch(`/ulbyuserid/${currentUser.id}`)
       .then(res => res.json())
       .then(data => {
@@ -100,7 +100,7 @@ const MyListings = () => {
       <div className='cardBtnWrapper'>
         <button type='button' id={item.id} className='cardBtn' onClick={() => handleDetails(item)}>DETAILS</button>
         {
-          loginType === 'user' ? <button type='button' id={item.id} className='cardBtn' onClick={handleDelete}>REMOVE</button> : <button type='button' id={item.id} className='cardBtn' onClick={handleDelete}>DELETE</button>
+          currentUser.login_type === 'user' ? <button type='button' id={item.id} className='cardBtn' onClick={handleDelete}>REMOVE</button> : <button type='button' id={item.id} className='cardBtn' onClick={handleDelete}>DELETE</button>
         }
       </div>
     </div>
@@ -109,13 +109,13 @@ const MyListings = () => {
   
   return (
     <div className='container'>
-      <Header title={loginType === 'user' ? 'Saved Listings' : 'Active Listings'} />
+      <Header title={currentUser.login_type === 'user' ? 'Saved Listings' : 'Active Listings'} />
       <NavBar />
       {isModal ? <Modal currentSaved={myListings} selectedListing={selectedListing} handleIsModal={handleIsModal} handleOpenSnack={handleOpenSnack} handleDelete={handleDelete} fetchListings={fetchListings}/> : null}
       <div className='content'>
         {
           mapped.length === 0 ?
-            loginType === 'user' ?
+            currentUser.login_type === 'user' ?
             <h1 className='noListings'>You have no saved listings.</h1> : 
             <h1 className='noListings'>You have no active listings.</h1> :
           mapped

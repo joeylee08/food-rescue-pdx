@@ -10,7 +10,7 @@ import Error from './Error';
 import { UserContext } from "../context/UserContext";
 
 function App() {
-	const { loginType } = useContext(UserContext);
+	const { currentUser } = useContext(UserContext);
 
 	return (
 		<Routes>
@@ -18,14 +18,14 @@ function App() {
 			<Route path="/findlisting" element={<FindListing />} />
 			<Route path="/login" element={<Login />} />
 			
-			{loginType === "user" && (
+			{currentUser.login_type === "user" && (
 				<>
 					<Route path="/mylistings" element={<MyListings />} />
 					<Route path="/account" element={<Account />} />
 				</>
 			)}
 
-			{loginType === "business" && (
+			{currentUser.login_type === "business" && (
 				<>
 					<Route path="/mylistings" element={<MyListings />} />
 					<Route path="/createlisting" element={<CreateListing />} />

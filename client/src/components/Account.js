@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import Snackbar from './Snackbar'
 
 const Account = () => {
-  const { currentUser, loginType, handleSetUser, handleSetLogin } = useContext(UserContext)
+  const { currentUser, handleSetUser } = useContext(UserContext)
   const {isSnack, snackText, handleCloseSnack, handleOpenSnack} = useContext(UserContext)
   const [isDelete, setIsDelete] = useState(false)
   const navigate = useNavigate()
@@ -23,7 +23,7 @@ const Account = () => {
     },
     validationSchema: fsL,
     onSubmit: (values) => {
-      const patchUrl = loginType === 'user' ? `/userbyid/${currentUser.id}` : `/businessbyid/${currentUser.id}`
+      const patchUrl = currentUser.login_type === 'user' ? `/userbyid/${currentUser.id}` : `/businessbyid/${currentUser.id}`
       fetch(patchUrl, {
         method: "PATCH",
         headers: {
@@ -52,7 +52,7 @@ const Account = () => {
     initialValues: {
       username: '',
       password: '',
-      login_type: loginType
+      login_type: currentUser.login_type
     },
     validationSchema: fsD,
     onSubmit: (values) => {
@@ -68,7 +68,7 @@ const Account = () => {
         else throw Error
       })
       .then(() => {
-        const deleteUrl = loginType === 'user' ? `/userbyid/${currentUser.id}` : `/businessbyid/${currentUser.id}`
+        const deleteUrl = currentUser.login_type === 'user' ? `/userbyid/${currentUser.id}` : `/businessbyid/${currentUser.id}`
         fetch(deleteUrl, {
           method: "DELETE"
         })
@@ -79,7 +79,6 @@ const Account = () => {
             setTimeout(() => {
               navigate('/')
               handleSetUser({})
-              handleSetLogin('')
             }, 2000)
           })
         })

@@ -2,9 +2,9 @@ import { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
 
 const UserInfo = () => {
-  const {loginType, currentUser} = useContext(UserContext)
+  const {currentUser} = useContext(UserContext)
 
-  if (loginType === 'user') {
+  if (currentUser.login_type === 'user') {
     return (
       <div className='userDetails'>
         <h1>{currentUser.username}</h1>

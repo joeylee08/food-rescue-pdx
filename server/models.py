@@ -26,7 +26,7 @@ class User(db.Model, SerializerMixin):
     # SERIALIZATION
     serialize_only = (
 			'id',
-            'login_type',
+      'login_type',
 			'username',
 			'location',
 			'created_at'

@@ -3,10 +3,10 @@ import { UserContext } from '../context/UserContext'
 import { useContext } from 'react'
 
 const NavBar = () => {
-  const {loginType} = useContext(UserContext)
+  const {currentUser} = useContext(UserContext)
   
 
-	if (loginType === null) {
+	if (currentUser === null) {
 		return (
 			<nav className='navbar'>
         <ul className='linksList'>
@@ -17,7 +17,7 @@ const NavBar = () => {
       </nav>
 		)
 	}
-  else if (loginType === 'user') {
+  else if (currentUser.login_type === 'user') {
     return (
       <nav className='navbar'>
         <ul className='linksList'>
@@ -28,7 +28,7 @@ const NavBar = () => {
         </ul>
       </nav>
     )
-  } else if (loginType === 'business') {
+  } else if (currentUser.login_type === 'business') {
     return (
       <nav className='navbar'>
         <ul className='linksList'>
