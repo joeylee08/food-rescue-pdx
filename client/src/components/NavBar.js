@@ -34,7 +34,6 @@ const NavBar = () => {
         <ul className='linksList'>
           <li><NavLink to='/'>Home</NavLink></li>
           <li><NavLink to='/mylistings'>Active Listings</NavLink></li>
-          <li><NavLink to='/createlisting'>Create Listing</NavLink></li>
           <li><NavLink to='/account'>Account</NavLink></li>
         </ul>
       </nav>

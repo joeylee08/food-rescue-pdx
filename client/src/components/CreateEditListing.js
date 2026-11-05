@@ -103,44 +103,46 @@ const CreateEditListing = ({selectedListing, fetchListings, handleIsModal, handl
 		<>
 			<div className='createEditListing'>
 				<form className='createEditForm' onSubmit={formikSchema.handleSubmit}>
-					<h1 className='formTitle'>{selectedListing ? 'Edit' : 'Create'} Listing</h1>
-					<div className='loginBar'></div>
+					<h3 className='formTitle'>{selectedListing ? 'Edit' : 'Create'} Listing</h3>
+					<hr className='formHr'></hr>
 					<h3 className='formTag'>Please enter your listing information.</h3>
-					<label htmlFor='product'>Product:</label>
-					<input id='product' className='loginInputProduct' type='text' onChange={formikSchema.handleChange} value={formikSchema.values.product} placeholder="Enter Product"></input>
-					<label htmlFor='quantity'>Quantity:</label>
-					<input id='quantity' className='loginInput' type='number' onChange={formikSchema.handleChange} value={formikSchema.values.quantity} placeholder="Enter Password"></input>
-					<label htmlFor='expiration_date'>Expiration Date:</label>
-					<input id='expiration_date' className='loginInput' type='text' onChange={formikSchema.handleChange} value={formikSchema.values.expiration_date} placeholder="MM/DD/YY"></input>
-					<label htmlFor='location'>Location:</label>
-					<input id='location' className='loginInputLocation' type='text' onChange={formikSchema.handleChange} value={formikSchema.values.location} placeholder="Enter Location"></input>
-					<label htmlFor='notes'>Enter Details:</label>
-					<textarea id='notes' className='loginInputTextarea' type='textarea' onChange={formikSchema.handleChange} value={formikSchema.values.notes} placeholder="Pickup Times, Contact Info, Additional Special Instructions."></textarea>
+					<div className='inputsWrapper'>
+						<label htmlFor='product'>Product:</label>
+						<input id='product' type='text' onChange={formikSchema.handleChange} value={formikSchema.values.product} placeholder="Enter Product"></input>
+						<label htmlFor='quantity'>Quantity:</label>
+						<input id='quantity' type='number' onChange={formikSchema.handleChange} value={formikSchema.values.quantity} placeholder="Enter Password"></input>
+						<label htmlFor='expiration_date'>Expiration Date:</label>
+						<input id='expiration_date' type='text' onChange={formikSchema.handleChange} value={formikSchema.values.expiration_date} placeholder="MM/DD/YY"></input>
+						<label htmlFor='location'>Location:</label>
+						<input id='location' type='text' onChange={formikSchema.handleChange} value={formikSchema.values.location} placeholder="Enter Location"></input>
+						<label htmlFor='notes'>Enter Details:</label>
+						<textarea id='notes' type='textarea' onChange={formikSchema.handleChange} value={formikSchema.values.notes} placeholder="Pickup Times, Contact Info, Additional Special Instructions."></textarea>
+					</div>
 					<div className='checkBoxes'>
 							<div className='checkboxPair'>
 								<label htmlFor='vegan_safe'>Vegan Safe:</label>
-								<input id='vegan_safe' className='loginCheckbox' type='checkbox' onChange={formikSchema.handleChange} checked={formikSchema.values.vegan_safe} value={formikSchema.values.vegan_safe}></input>
+								<input id='vegan_safe' className='formCheckbox' type='checkbox' onChange={formikSchema.handleChange} checked={formikSchema.values.vegan_safe} value={formikSchema.values.vegan_safe}></input>
 							</div>
 							<div className='checkboxPair'>
 								<label htmlFor='non_dairy'>Non Dairy:</label>
-								<input id='non_dairy' className='loginCheckbox' type='checkbox' onChange={formikSchema.handleChange} checked={formikSchema.values.non_dairy} value={formikSchema.values.non_dairy}></input>
+								<input id='non_dairy' className='formCheckbox' type='checkbox' onChange={formikSchema.handleChange} checked={formikSchema.values.non_dairy} value={formikSchema.values.non_dairy}></input>
 							</div>
 							<div className='checkboxPair'>
 								<label htmlFor='gluten_free'>Gluten Free:</label>
-							<input id='gluten_free' className='loginCheckbox' type='checkbox' onChange={formikSchema.handleChange} checked={formikSchema.values.gluten_free} value={formikSchema.values.gluten_free}></input>
+							<input id='gluten_free' className='formCheckbox' type='checkbox' onChange={formikSchema.handleChange} checked={formikSchema.values.gluten_free} value={formikSchema.values.gluten_free}></input>
 							</div>
 							<div className='checkboxPair'>
 								<label htmlFor='nut_free'>Nut Free:</label>
-							<input id='nut_free' className='loginCheckbox' type='checkbox' onChange={formikSchema.handleChange} checked={formikSchema.values.nut_free} value={formikSchema.values.nut_free}></input>
+							<input id='nut_free' className='formCheckbox' type='checkbox' onChange={formikSchema.handleChange} checked={formikSchema.values.nut_free} value={formikSchema.values.nut_free}></input>
 							</div>
 							<div className='checkboxPair'>
 								<label htmlFor='soy_free'>Soy Free:</label>
-								<input id='soy_free' className='loginCheckbox' type='checkbox' onChange={formikSchema.handleChange} checked={formikSchema.values.soy_free} value={formikSchema.values.soy_free}></input>
+								<input id='soy_free' className='formCheckbox' type='checkbox' onChange={formikSchema.handleChange} checked={formikSchema.values.soy_free} value={formikSchema.values.soy_free}></input>
 							</div>
 						</div>
 					<div className='formBtnWrapper'>
-						<button className='modalBtn' type='submit'>{selectedListing ? 'EDIT' : 'CREATE'}</button>
-						<button className='modalBtn' onClick={handleIsModal}>CANCEL</button>
+						<button className='listingBtn' type='submit'>{selectedListing ? 'EDIT' : 'CREATE'}</button>
+						<button className='listingBtn' onClick={handleIsModal}>CANCEL</button>
 					</div>
 				</form>
 				</div>

@@ -359,6 +359,43 @@ a:hover {
 .redX {
   color: red;
 }
+.createEditListing {
+	border: 2px solid red;
+	width: 70%;
+	margin: 0 auto;
+}
+.createEditForm {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+}
+h3.formTitle {
+	color: #343A40;
+	font-size: 2rem;
+	margin: 0;
+}
+h3.formTag {
+	font-size: 1.2rem;
+	color: #FF8A3D;
+	margin: 0;
+}
+.inputsWrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+.checkBoxes {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.checkboxPair {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
 /* STUFF BELOW THIS LINE IS FROM OLD PROJECT */
 
 .snackbar {
@@ -379,9 +416,6 @@ a:hover {
 .snackbar h2 {
   margin: auto;
 }
-.form {
-  background-color: #f4f4f4;
-}
 .loginForm {
   margin: auto;
   display: flex;
@@ -394,92 +428,6 @@ a:hover {
   border: 7px solid #435334;
   background-color: #ffffff;
   padding: 0.8rem 2rem 1.7rem 2rem;
-}
-.searchForm {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 0.8rem;
-  align-items: center;
-  width: 100%;
-  height: 7rem;
-  background-color: #ffffff;
-  font-size: 1.1rem;
-}
-button.searchInput {
-  width: 5rem;
-  font-family: math, fantasy;
-  font-size: 1rem;
-}
-input.searchInput {
-  width: 300px;
-  font-family: math, fantasy;
-  font-size: 1.1rem;
-}
-.formTag {
-  height: 1.5rem;
-  margin: 1.5rem 0px 0.5rem 0px;
-}
-.formTagDelete {
-  height: 1.5rem;
-  margin: 1rem 0px 1.2rem 0px;
-}
-h1.formTitle {
-  font-family: fantasy, math;
-  color: #435334;
-}
-.loginBar {
-  margin-top: -1rem;
-  height: 0.5rem;
-  width: 100%;
-  background-color: #0b6623;
-}
-.loginInput {
-  width: 220px;
-  height: 1.4rem;
-  margin-top: -0.6rem;
-  font-family: math, fantasy;
-  font-size: 1rem;
-}
-.loginInputProduct {
-  width: 340px;
-  height: 1.4rem;
-  margin-top: -0.6rem;
-  font-family: math, fantasy;
-  font-size: 1rem;
-}
-.loginInputLocation {
-  width: 340px;
-  height: 1.4rem;
-  margin-top: -0.6rem;
-  font-family: math, fantasy;
-  font-size: 1rem;
-}
-.loginInputTextarea {
-  width: 480px;
-  height: 5.2rem;
-  margin-top: -0.6rem;
-  font-family: math, fantasy;
-  font-size: 1rem;
-}
-.loginCheckbox {
-  width: 1.4rem;
-  height: 1.4rem;
-  font-family: math, fantasy;
-}
-.content {
-  background-color: #f4f4f4;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: flex-start;
-  padding: 2rem 1rem 2rem 1rem;
-  height: auto;
-}
-.loginContent {
-  background-color: #f4f4f4;
-  padding: 2rem 1rem 2rem 1rem;
-  height: auto;
 }
 .noListings {
   margin: 2.5rem auto auto auto;
@@ -510,55 +458,6 @@ h1.formTitle {
 }
 .cardBtn:hover {
   border: 2px solid red;
-}
-.modal {
-  position:fixed;
-  margin: auto;
-  align-self: center;
-  margin-top: 0.5rem;
-  z-index: 9;
-}
-.modalDetails {
-  margin:auto;
-  display: block;
-  align-self: center;
-  width: 520px;
-  height: auto;
-  border: 5px solid #435334;
-  background-color: #ffffff;
-  padding: 1rem 1.2rem 1rem 1.2rem;
-}
-.modalDetails h1 {
-  color: #435334;
-  margin-top: 0.5rem;
-}
-.listingsMap {
-  width: 100%;
-  margin: 0px;
-  height: 400px;
-}
-.modalMap {
-  width: 100%;
-  margin: 1rem 0px 1.5rem 0px;
-  height: 240px;
-}
-.modalBar {
-  height: 0.5rem;
-  width: 100%;
-  margin: -0.4rem 0rem 1.5rem 0rem;
-  background-color: #0b6623;
-}
-
-.checkBoxes {
-  width: 180px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.checkboxPair {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
 }
 .userDetails {
   display: flex;

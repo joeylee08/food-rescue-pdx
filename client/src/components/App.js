@@ -4,7 +4,6 @@ import Login from "./Login";
 import Home from './Home';
 import MyListings from './MyListings';
 import FindListing from './FindListing';
-import CreateListing from './CreateListing';
 import Account from './Account';
 import Error from './Error';
 import { UserContext } from "../context/UserContext";
@@ -28,7 +27,6 @@ function App() {
 			{currentUser.login_type === "business" && (
 				<>
 					<Route path="/mylistings" element={<MyListings />} />
-					<Route path="/createlisting" element={<CreateListing />} />
 					<Route path="/account" element={<Account />} />
 				</>
 			)}
