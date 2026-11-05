@@ -1,5 +1,6 @@
 import { CircleUserRound } from "lucide-react";
 import { useState, useEffect, useRef } from 'react'
+import NavBar from "./NavBar";
 
 const Header = () => {
 	const [menuOpen, setMenuOpen] = useState(false)
@@ -22,16 +23,19 @@ const Header = () => {
 	}, [])
 
   return (
-    <div className='header' ref={menuRef}>
-			<div className='headerWrapper'>
-				<h3 className='headerText'>Food Rescue <span>PDX</span></h3>
-				<CircleUserRound className='userIcon' size={39} onClick={toggleMenu}/>
+		<>
+			<div className='header' ref={menuRef}>
+				<div className='headerWrapper'>
+					<h3 className='headerText'>Food Rescue <span>PDX</span></h3>
+					<CircleUserRound className='userIcon' size={39} onClick={toggleMenu}/>
+				</div>
+				{menuOpen && <div className='loginDropdown'>
+						<button className='listingBtn'>User</button>
+						<button className='listingBtn'>Business</button>
+				</div>}
 			</div>
-			{menuOpen && <div className='loginDropdown'>
-					<button className='listingBtn'>User</button>
-					<button className='listingBtn'>Business</button>
-			</div>}
-    </div>
+			{/* <NavBar /> */}
+		</>
   )
 }
 

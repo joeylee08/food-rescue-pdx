@@ -1,4 +1,3 @@
-import NavBar from './NavBar'
 import Header from './Header'
 import Footer from './Footer'
 import { useContext, useEffect, useState } from 'react'
@@ -7,7 +6,6 @@ import UserInfo from './UserInfo'
 import ListingCard from './ListingCard'
 import ListingDetails from './ListingDetails.js'
 import { Search, Van, Utensils } from "lucide-react";
-import CreateEditListing from './CreateEditListing.js'
 
 const Home = () => {
 	const dummyListing = {
@@ -51,10 +49,7 @@ const Home = () => {
 
   return (
     <>
-			<CreateEditListing selectedListing={dummyListing}/>
       <Header title={'Food Rescue PDX'}/>
-      {/* <NavBar/> */}
-      {currentUser && <UserInfo />}
 			<div className='mainPage home'>
 				<div className='child child0'>
 					<div className='instructions'>
