@@ -5,7 +5,7 @@ bright orange: #FF8A3D
 deep orange: #D95A1B;
 light gray: #bbbbbb;
 dark gray: #343A40;
-gunmetal: 
+gunmetal: #585858;
 black: #171717;
 
 background gray: #EFEFEF;
@@ -27,7 +27,6 @@ body {
 p, h3 {
 	color: #343A40;
 }
-.footer,
 .header {
 	width: 100%;
 	display: flex;
@@ -38,6 +37,10 @@ p, h3 {
 	color: white;
 	position: relative;
 }
+.footer {
+	background-color: #343A40;
+	height: 6rem;
+}
 .headerWrapper {
 	width: 100%;
 	height: auto;
@@ -46,7 +49,7 @@ p, h3 {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	padding: 1.2rem;
+	padding: 1.5rem;
 }
 .header h3 {
 	font-size: 4.2rem;
@@ -93,7 +96,7 @@ p, h3 {
   width: 100%;
   height: auto;
   background-color: #585858;
-	padding: 0.8rem;
+	padding: 0.7em 0 0.4rem 0;
 }
 .navIcon {
 
