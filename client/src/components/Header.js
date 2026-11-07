@@ -27,14 +27,14 @@ const Header = () => {
 			<div className='header' ref={menuRef}>
 				<div className='headerWrapper'>
 					<h3 className='headerText'>Food Rescue <span>PDX</span></h3>
-					<CircleUserRound className='userIcon' size={39} onClick={toggleMenu}/>
 				</div>
+				<NavBar />
 				{menuOpen && <div className='loginDropdown'>
 						<button className='listingBtn'>User</button>
 						<button className='listingBtn'>Business</button>
 				</div>}
 			</div>
-			{/* <NavBar /> */}
+			
 		</>
   )
 }
