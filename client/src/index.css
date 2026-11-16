@@ -119,10 +119,31 @@ a {
 a:hover {
 	cursor: pointer;
 }
+.home .child0 {
+	display: flex;
+	width: 85%;
+	margin: 3rem auto 0.5rem auto;
+	align-items: center;
+	justify-content: space-around;
+}
+.instructions {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.instructionIcon {
+	color: #ff8a3d;
+}
+.instructions > p {
+	margin: 0;
+	font-size: 1.2rem;
+	font-weight: 450;
+}
 .home .child1 {
-	width: 90%;
+	width: 85%;
 	height: 40rem;
-	margin: 3rem auto 0 auto;
+	margin: 4rem auto 0 auto;
 	display: grid;
 	grid-template-columns: minmax(27rem, 3fr) 5fr;
 	border: 0.05rem solid #bbbbbb;
@@ -211,13 +232,18 @@ a:hover {
 	border: 0.05rem solid #bbbbbb;
 	border-radius: 0.5rem;
 	background-color: white;
-	padding: 0.45rem 0.5rem;
+	padding: 0.7rem 0.6rem;
 	transition: box-shadow 0.5s ease, border-color 0.5s ease;
 }
 .listingCard:hover {
 	border-color: green;
 	box-shadow: 0 0 0 0.1rem green;
 	cursor: pointer;
+}
+.listingCard .itemAndQty {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
 }
 .itemAndQty > p {
 	margin: 0;
@@ -294,27 +320,6 @@ a:hover {
 .home .child3 p {
 	margin: 0;
 	font-size: 1.2rem;
-}
-.home .child0 {
-	display: flex;
-	width: 85%;
-	margin: 3rem auto 0.5rem auto;
-	align-items: center;
-	justify-content: space-around;
-}
-.instructions {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-.instructionIcon {
-	color: #ff8a3d;
-}
-.instructions > p {
-	margin: 0;
-	font-size: 1.2rem;
-	font-weight: 450;
 }
 .listingDetailsChild {
 	position: relative;
