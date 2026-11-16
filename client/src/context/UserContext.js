@@ -14,10 +14,15 @@ const UserProvider = ({children}) => {
 	const [isAuthLoading, setIsAuthLoading] = useState(true)
 
   const [isSnack, setIsSnack] = useState(false)
+	const [snackMsg, setSnackMsg] = useState('')
 
-  const showSnack = () => {
+  const showSnack = (message) => {
+		setSnackMsg(message)
     setIsSnack(true)
-    setTimeout(() => setIsSnack(false), 1100)
+    setTimeout(() => {
+			setIsSnack(false)
+			setSnackMsg('')
+		}, 1100)
   }
 
   // useEffect(() => {
@@ -44,7 +49,7 @@ const UserProvider = ({children}) => {
   }
 
   return (
-    <UserContext.Provider value={{currentUser, isAuthLoading, handleSetUser, isSnack, showSnack}}>
+    <UserContext.Provider value={{currentUser, isAuthLoading, handleSetUser, isSnack, snackMsg, showSnack}}>
       {children}
     </UserContext.Provider>
   )

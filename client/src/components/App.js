@@ -8,9 +8,10 @@ import Account from './Account';
 import Login from './Login'
 import Error from './Error';
 import { UserContext } from "../context/UserContext";
+import Snackbar from "./Snackbar";
 
 function App() {
-	const { currentUser } = useContext(UserContext);
+	const { currentUser, isSnack, snackMsg } = useContext(UserContext);
 
 	return (
 		<div className='app'>
@@ -30,6 +31,7 @@ function App() {
 				)}
 				<Route path="*" element={<Error />} />
 			</Routes>
+			{isSnack ? <Snackbar message={snackMsg}/> : null}
 			</main>
 			<Footer />
 		</div>

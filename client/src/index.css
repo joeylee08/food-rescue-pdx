@@ -81,13 +81,13 @@ input {
 	padding: 1.5rem 0;
 }
 .header h3 {
-	font-size: 3rem;
+	font-size: 3.2rem;
 	margin: 0;
 	color: white;
-	font-weight: 500;
+	font-weight: 550;
 }
 .header span {
-	font-size: 3rem;
+	font-size: 3.2rem;
 	margin: 0;
 	color: #FF8A3D;
 	font-weight: 650;
@@ -141,6 +141,27 @@ a {
 a:hover {
 	cursor: pointer;
 	color: #ff8a3d;
+}
+.snackbar {
+  position: fixed;
+  display: flex;
+  left: 2.2rem;
+  bottom: 2.2rem;
+  width: 22rem;
+  height: 5.5rem;
+  background-color: #ffffff;
+  border: 0.1rem solid blue;
+  border-radius: 1rem;
+  color: blue;
+  z-index: 99;
+	padding: 1.5rem;
+	align-items: center;
+	justify-content: center;
+}
+.snackbar p {
+	font-size: 1.2rem;
+  margin: 0;
+	color: blue;
 }
 .mainPage.login {
 	margin: 4rem 0;
@@ -508,24 +529,7 @@ h3.formTag {
 
 /* STUFF BELOW THIS LINE IS FROM OLD PROJECT */
 
-.snackbar {
-  position: fixed;
-  display: flex;
-  left: 2.2rem;
-  bottom: 2.2rem;
-  width: 350px;
-  height: 65px;
-  background-color: #ffffff;
-  border: 3px solid blue;
-  border-radius: 7px;
-  color: blue;
-  font-family: Tahoma, Geneva, Verdana, sans-serif;
-  z-index: 99;
-  font-size: 0.9rem;
-}
-.snackbar h2 {
-  margin: auto;
-}
+
 .noListings {
   margin: 2.5rem auto auto auto;
   font-size: 1.8rem;
