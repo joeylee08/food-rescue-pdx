@@ -27,6 +27,26 @@ body {
 p, h3 {
 	color: #343A40;
 }
+select {
+	font-size: 1rem;
+	height: 1.95rem;
+	width: 100%;
+	border: 0.05rem solid #343A40;
+	border-radius: 0.3rem;
+	padding: 0.2rem;
+}
+input {
+	font-size: 1rem;
+	height: 2rem;
+	width: 100%;
+	border: 0.05rem solid #343A40;
+	border-radius: 0.3rem;
+	padding: 0.3rem;
+}
+.login .loginForm input,
+.login .loginForm select {
+	margin-bottom: 0.8rem;
+}
 .header {
 	width: 100%;
 	background-color: #343A40;
@@ -38,14 +58,14 @@ p, h3 {
 	height: 6rem;
 }
 .headerWrapper {
-	width: 90%;
+	width: 88%;
 	height: auto;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0.8rem 0;
+	padding: 1rem 0;
 }
 .header h3 {
 	font-size: 3rem;
@@ -98,13 +118,51 @@ p, h3 {
   list-style-type: none;
   font-size: 1.3rem;
 	font-weight: 450;
+	padding-top: 0.7rem;
 }
 a {
   color: #fafafa;
   text-decoration: none;
+	transition: color 0.3s ease;
 }
 a:hover {
 	cursor: pointer;
+	color: #ff8a3d;
+}
+.mainPage.login {
+	margin: 4rem 0;
+}
+.loginForm {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 50%;
+  height: auto;
+  border: 0.08rem solid #bbbbbb;
+	border-radius: 1rem;
+  background-color: #ffffff;
+  padding: 1.5rem 3rem 2.5rem 3rem;
+}
+.form .listingBtn {
+	width: 10rem;
+	height: 2.5rem;
+	font-size: 1.2rem;
+}
+.formTitle {
+	margin: 1.5rem 0 0 0;
+	color: #343A40;
+	font-size: 2.5rem;
+	font-weight: 400;
+}
+.loginBar {
+	width: 100%;
+	height: 0.3rem;
+	background-color: #FF8A3D;
+	border: none;
+	margin: 1.2rem 0;
 }
 .home .child0 {
 	display: flex;
@@ -330,7 +388,8 @@ a:hover {
 .listingBtn:hover {
   border: 2px solid #343A40;
 	background-color: #343A40;
-	color: white
+	color: white;
+	cursor: pointer;
 }
 .listingDetailsChild > p {
 	font-size: 0.9rem;
@@ -450,19 +509,6 @@ h3.formTag {
 }
 .snackbar h2 {
   margin: auto;
-}
-.loginForm {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 1rem;
-  width: 500px;
-  height: auto;
-  border: 7px solid #435334;
-  background-color: #ffffff;
-  padding: 0.8rem 2rem 1.7rem 2rem;
 }
 .noListings {
   margin: 2.5rem auto auto auto;

@@ -1,5 +1,3 @@
-import Header from './Header'
-import Footer from './Footer'
 import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../context/UserContext'
 import UserInfo from './UserInfo'
@@ -49,7 +47,6 @@ const Home = () => {
 
   return (
     <>
-      <Header title={'Food Rescue PDX'}/>
 			<div className='mainPage home'>
 				<div className='child child0'>
 					<div className='instructions'>
@@ -113,7 +110,6 @@ const Home = () => {
 					<p>Food Rescue PDX connects local businesses with people who can put that food to good use. By making surplus food easier to discover and collect, we're building a more resourceful, connected, and sustainable Portland.</p>
 				</div>
 			</div>
-			<Footer/>
     </>
   )
 }

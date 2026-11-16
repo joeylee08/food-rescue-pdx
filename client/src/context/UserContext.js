@@ -10,7 +10,7 @@ const UserProvider = ({children}) => {
 		login_type: "user",
 		location: "Portland, OR"
 	};
-  const [currentUser, setCurrentUser] = useState(dummyUser)
+  const [currentUser, setCurrentUser] = useState(null)
 	const [isAuthLoading, setIsAuthLoading] = useState(true)
 
   const [isSnack, setIsSnack] = useState(false)
