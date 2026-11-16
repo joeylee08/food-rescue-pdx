@@ -13,9 +13,10 @@ function App() {
 	const { currentUser } = useContext(UserContext);
 
 	return (
-		<>
+		<div className='app'>
 			<Header />
-			<Routes>
+			<main>
+				<Routes>
 				<Route path="/" element={<Home />} />
 				{currentUser ? (
 					<>
@@ -29,8 +30,9 @@ function App() {
 				)}
 				<Route path="*" element={<Error />} />
 			</Routes>
+			</main>
 			<Footer />
-		</>
+		</div>
 	);
 }
 

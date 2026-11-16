@@ -24,6 +24,14 @@ body {
 	width: 100%;
 	margin: 0;
 }
+.app {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+main {
+	flex: 1;
+}
 p, h3 {
 	color: #343A40;
 }
@@ -43,9 +51,14 @@ input {
 	border-radius: 0.3rem;
 	padding: 0.3rem;
 }
+.login label {
+	font-weight: 500;
+	padding-left: 0.1rem;
+}
 .login .loginForm input,
 .login .loginForm select {
-	margin-bottom: 0.8rem;
+	margin-top: -0.2rem;
+	margin-bottom: 0.7rem;
 }
 .header {
 	width: 100%;
@@ -139,7 +152,7 @@ a:hover {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 0.5rem;
-  width: 50%;
+  width: 40%;
   height: auto;
   border: 0.08rem solid #bbbbbb;
 	border-radius: 1rem;
@@ -151,18 +164,21 @@ a:hover {
 	height: 2.5rem;
 	font-size: 1.2rem;
 }
+.form .listingBtn:last-of-type {
+	margin-top: 1rem;
+}
 .formTitle {
-	margin: 1.5rem 0 0 0;
+	margin: 1.2rem 0 0 0;
 	color: #343A40;
-	font-size: 2.5rem;
-	font-weight: 400;
+	font-size: 2.2rem;
+	font-weight: 450;
 }
 .loginBar {
 	width: 100%;
 	height: 0.3rem;
 	background-color: #FF8A3D;
 	border: none;
-	margin: 1.2rem 0;
+	margin: 0.8rem 0 1.2rem 0;
 }
 .home .child0 {
 	display: flex;

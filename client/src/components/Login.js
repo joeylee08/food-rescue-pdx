@@ -99,7 +99,7 @@ const Login = () => {
         <div className='form'>
           <form className='loginForm' onSubmit={formikLogin.handleSubmit}>
             <button className='listingBtn' type='button' onClick={() => handleToggleForm()}>{isLogin ? 'to Signup' : 'to Login'}</button>
-            <h1 className='formTitle'>Food Rescue PDX Login</h1>
+            <h1 className='formTitle'>User Login</h1>
             <hr className='loginBar' />
             <label htmlFor='login_type'>Account Type:</label>
             <select id='login_type' className='loginInput' onChange={formikLogin.handleChange} value={formikLogin.values.login_type}>
@@ -126,7 +126,7 @@ const Login = () => {
 					<div className='form'>
 						<form className='loginForm' onSubmit={formikSignup.handleSubmit}>
 							<button className='listingBtn' type='button' onClick={() => handleToggleForm()}>{isLogin ? 'to Signup' : 'to Login'}</button>
-							<h1 className='formTitle'>Food Rescue PDX Sign Up</h1>
+							<h1 className='formTitle'>Create an Account</h1>
 							<hr className='loginBar' />
 							<label htmlFor='login_type'>Account Type:</label>
 							<select id='login_type' className='loginInput' onChange={formikSignup.handleChange} value={formikSignup.values.login_type}>

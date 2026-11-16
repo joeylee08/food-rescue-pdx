@@ -25,7 +25,7 @@ const Home = () => {
   const { currentUser } = useContext(UserContext)
 
 	const [listings, setListings] = useState([])
-	const [selectedListing, setSelectedListing] = useState(dummyListing)
+	const [selectedListing, setSelectedListing] = useState(null)
 
   useEffect(() => {
     fetch('/listings')
