@@ -27,8 +27,9 @@ const Header = () => {
 			<div className='header' ref={menuRef}>
 				<div className='headerWrapper'>
 					<h3 className='headerText'>Food Rescue <span>PDX</span></h3>
+					<NavBar />
 				</div>
-				<NavBar />
+				
 				{menuOpen && <div className='loginDropdown'>
 						<button className='listingBtn'>User</button>
 						<button className='listingBtn'>Business</button>

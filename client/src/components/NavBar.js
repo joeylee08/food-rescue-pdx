@@ -10,7 +10,7 @@ const NavBar = () => {
 		return (
 			<nav className='navbar'>
         <ul className='linksList'>
-          <li><NavLink to='/'>Home</NavLink></li>
+          <li><NavLink to='/account'><CircleUserRound size={31} className='navIcon' /></NavLink></li>
         </ul>
       </nav>
 		)
@@ -19,9 +19,9 @@ const NavBar = () => {
     return (
       <nav className='navbar'>
         <ul className='linksList'>
-          <li><NavLink to='/'><House size={29} className='navIcon' /></NavLink></li>
-          <li><NavLink to='/mylistings'><Scroll size={29} className='navIcon' /></NavLink></li>
-          <li><NavLink to='/account'><CircleUserRound size={29} className='navIcon' /></NavLink></li>
+          <li><NavLink to='/'><House size={31} className='navIcon' /></NavLink></li>
+          <li><NavLink to='/mylistings'><Scroll size={31} className='navIcon' /></NavLink></li>
+          <li><NavLink to='/account'><CircleUserRound size={31} className='navIcon' /></NavLink></li>
         </ul>
       </nav>
     )
