@@ -11,13 +11,13 @@ const NavBar = () => {
 			<ul className="linksList">
 				{currentUser && (
 					<>
-						<li><NavLink to="/"><House size={31} className="navIcon" /></NavLink></li>
-						<li><NavLink to="/mylistings"><Scroll size={31} className="navIcon" /></NavLink></li>
+						<li><NavLink to="/"><House size={32} className="navIcon" /></NavLink></li>
+						<li><NavLink to="/mylistings"><Scroll size={32} className="navIcon" /></NavLink></li>
 					</>
 				)}
 				<li>
 					<NavLink to={currentUser ? '/account' : '/login'}>
-						<CircleUserRound size={31} className="navIcon" />
+						<CircleUserRound size={32} className="navIcon" />
 					</NavLink>
 				</li>
 			</ul>

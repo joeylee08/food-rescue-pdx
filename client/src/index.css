@@ -78,7 +78,7 @@ input {
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	padding: 1rem 0;
+	padding: 1.5rem 0;
 }
 .header h3 {
 	font-size: 3rem;
