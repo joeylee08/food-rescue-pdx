@@ -1,6 +1,7 @@
 import { CircleUserRound } from "lucide-react";
 import { useState, useEffect, useRef } from 'react'
 import NavBar from "./NavBar";
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
 	const [menuOpen, setMenuOpen] = useState(false)
@@ -26,7 +27,9 @@ const Header = () => {
 		<>
 			<div className='header' ref={menuRef}>
 				<div className='headerWrapper'>
-					<h3 className='headerText'>Food Rescue <span>PDX</span></h3>
+					<NavLink to='/'>
+						<h3 className='headerText'>Food Rescue <span>PDX</span></h3>
+					</NavLink>
 					<NavBar />
 				</div>
 				

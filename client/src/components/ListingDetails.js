@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
 
 const ListingDetails = ({selectedListing, currentSaved}) => {
-  const {currentUser, handleOpenSnack} = useContext(UserContext)
+  const {currentUser} = useContext(UserContext)
   
 	return (
 		<>

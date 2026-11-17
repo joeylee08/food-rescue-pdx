@@ -6,11 +6,12 @@ const UserProvider = ({children}) => {
 	const dummyUser = {
 		id: 1,
 		username: "testuser",
+		business_name: 'The Poo Store',
 		email: "test@example.com",
-		login_type: "user",
+		login_type: "business",
 		location: "Portland, OR"
 	};
-  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState(dummyUser)
 	const [isAuthLoading, setIsAuthLoading] = useState(true)
 
   const [isSnack, setIsSnack] = useState(false)

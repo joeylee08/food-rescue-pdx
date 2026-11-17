@@ -22,7 +22,7 @@ const Home = () => {
 		soy_free: true,
 		created_at: "2026-11-04T09:00:00"
 	};
-  const { currentUser } = useContext(UserContext)
+  const { currentUser, showSnack } = useContext(UserContext)
 
 	const [listings, setListings] = useState([])
 	const [selectedListing, setSelectedListing] = useState(null)
@@ -74,7 +74,7 @@ const Home = () => {
 						<div className={`openListing ${selectedListing ? '' : 'isHidden'}`}>
 							{selectedListing && <ListingDetails currentSaved={listings.slice(4)} selectedListing={selectedListing}/>}
 							<div className='listingBtnBox'>
-								<button className='listingBtn'>SAVE</button>
+								<button className='listingBtn' onClick={() => showSnack('Listing saved.')}>SAVE</button>
 								<button className='listingBtn' onClick={clearListing}>BACK</button>
 							</div>
 						</div>
